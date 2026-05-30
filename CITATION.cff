@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "TorchAgentic"
+version: 0.2.1
+doi: 10.5281/zenodo.XXXXXXX
+date-released: 2026-05-30
+authors:
+  - name: "Liodon AI"
+    email: contact@liodon.ai
+license: MIT
+repository-code: "https://github.com/liodon-ai/torchagentic"
+abstract: "Differentiable cognitive primitives for agentic AI — a library of composable, compile-optimized PyTorch primitives for building agents that learn."
+keywords:
+  - "pytorch"
+  - "deep-learning"
+  - "reinforcement-learning"
+  - "agentic-ai"
+  - "differentiable-memory"
