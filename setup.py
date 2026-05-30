@@ -16,10 +16,10 @@ if readme_path.exists():
 
 setup(
     name="torchagentic",
-    version="0.1.0",
-    author="Liodon AI",
+    version="0.2.0",
+    author="Py-AI-Dev",
     author_email="contact@liodon.ai",
-    description="PyTorch model definitions for AI agents - RL, Transformers, Memory Networks, Multi-Agent",
+    description="Differentiable cognitive primitives for agentic AI - Memory, Credit Assignment, Planning, Exploration",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/liodon-ai/torchagentic",

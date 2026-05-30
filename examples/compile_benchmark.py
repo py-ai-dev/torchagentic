@@ -22,6 +22,9 @@ from torchagentic import (
     CompileConfig,
     COMPILE_SUPPORT,
 )
+from torchagentic.nn import (
+    Memory, GAE, ValueIteration, RandomNetworkDistillation,
+)
 
 
 @dataclass
@@ -219,6 +222,36 @@ def benchmark_all_models(
             print(f"  PPO {'cont' if continuous else 'disc'} (bs={batch_size}): "
                   f"{uncompiled:.3f} -> {compiled:.3f} ms ({speedup:.2f}x)")
     
+    # ── nn Primitive benchmarks ──────────────────────────────
+    print("\n--- nn Primitives ---")
+
+    # Memory (NTM)
+    B, S, D = 16, 128, 64
+    mem = Memory(num_slots=S, slot_size=D, num_reads=4, backend="ntm").to(device)
+    mem_inputs = torch.randn(B, D, device=device)
+    uncompiled, compiled, compile_time = run_benchmark(mem, mem_inputs)
+    speedup = uncompiled / compiled if compiled > 0 else 1.0
+    results.append(BenchmarkResult("nn.Memory(NTM)", B, device, uncompiled, compiled, speedup, compile_time, {}))
+    print(f"  nn.Memory(NTM): {uncompiled:.3f} -> {compiled:.3f} ms ({speedup:.2f}x)")
+
+    # GAE
+    T, B_gae = 128, 32
+    gae = GAE(gamma=0.99, lam=0.95).to(device)
+    gae_inputs = (torch.randn(T, B_gae, device=device), torch.randn(T + 1, B_gae, device=device))
+    uncompiled, compiled, compile_time = run_benchmark(gae, gae_inputs[0])
+    speedup = uncompiled / compiled if compiled > 0 else 1.0
+    results.append(BenchmarkResult("nn.GAE", B_gae, device, uncompiled, compiled, speedup, compile_time, {}))
+    print(f"  nn.GAE: {uncompiled:.3f} -> {compiled:.3f} ms ({speedup:.2f}x)")
+
+    # ValueIteration
+    VI_S, VI_A = 32, 8
+    vi = ValueIteration(num_states=VI_S, num_actions=VI_A, num_iters=20).to(device)
+    vi_inputs = torch.randn(8, VI_S, VI_A, device=device)
+    uncompiled, compiled, compile_time = run_benchmark(vi, vi_inputs)
+    speedup = uncompiled / compiled if compiled > 0 else 1.0
+    results.append(BenchmarkResult("nn.ValueIteration", 8, device, uncompiled, compiled, speedup, compile_time, {}))
+    print(f"  nn.ValueIteration: {uncompiled:.3f} -> {compiled:.3f} ms ({speedup:.2f}x)")
+
     # Save results
     if output_path:
         output_file = Path(output_path)
