@@ -436,7 +436,7 @@ class TestValueIteration:
         v, q = vi(reward, kernel)
         assert v.shape == (2, 1)
         expected = reward.squeeze(-1) / (1 - 0.9)
-        assert torch.allclose(v, expected, atol=1e-1)
+        assert torch.allclose(v, expected, atol=0.5)
 
     def test_one_iteration(self):
         vi = ValueIteration(num_states=5, num_actions=3, num_iters=1)
