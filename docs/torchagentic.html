@@ -7,11 +7,11 @@
     <title>torchagentic API documentation</title>
 
     <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
-    <style>/*! syntax-highlighting.css */pre{line-height:125%;}span.linenos{color:inherit; background-color:transparent; padding-left:5px; padding-right:20px;}.pdoc-code .hll{background-color:#ffffcc}.pdoc-code{background:#f8f8f8;}.pdoc-code .c{color:#3D7B7B; font-style:italic}.pdoc-code .err{border:1px solid #FF0000}.pdoc-code .k{color:#008000; font-weight:bold}.pdoc-code .o{color:#666666}.pdoc-code .ch{color:#3D7B7B; font-style:italic}.pdoc-code .cm{color:#3D7B7B; font-style:italic}.pdoc-code .cp{color:#9C6500}.pdoc-code .cpf{color:#3D7B7B; font-style:italic}.pdoc-code .c1{color:#3D7B7B; font-style:italic}.pdoc-code .cs{color:#3D7B7B; font-style:italic}.pdoc-code .gd{color:#A00000}.pdoc-code .ge{font-style:italic}.pdoc-code .gr{color:#E40000}.pdoc-code .gh{color:#000080; font-weight:bold}.pdoc-code .gi{color:#008400}.pdoc-code .go{color:#717171}.pdoc-code .gp{color:#000080; font-weight:bold}.pdoc-code .gs{font-weight:bold}.pdoc-code .gu{color:#800080; font-weight:bold}.pdoc-code .gt{color:#0044DD}.pdoc-code .kc{color:#008000; font-weight:bold}.pdoc-code .kd{color:#008000; font-weight:bold}.pdoc-code .kn{color:#008000; font-weight:bold}.pdoc-code .kp{color:#008000}.pdoc-code .kr{color:#008000; font-weight:bold}.pdoc-code .kt{color:#B00040}.pdoc-code .m{color:#666666}.pdoc-code .s{color:#BA2121}.pdoc-code .na{color:#687822}.pdoc-code .nb{color:#008000}.pdoc-code .nc{color:#0000FF; font-weight:bold}.pdoc-code .no{color:#880000}.pdoc-code .nd{color:#AA22FF}.pdoc-code .ni{color:#717171; font-weight:bold}.pdoc-code .ne{color:#CB3F38; font-weight:bold}.pdoc-code .nf{color:#0000FF}.pdoc-code .nl{color:#767600}.pdoc-code .nn{color:#0000FF; font-weight:bold}.pdoc-code .nt{color:#008000; font-weight:bold}.pdoc-code .nv{color:#19177C}.pdoc-code .ow{color:#AA22FF; font-weight:bold}.pdoc-code .w{color:#bbbbbb}.pdoc-code .mb{color:#666666}.pdoc-code .mf{color:#666666}.pdoc-code .mh{color:#666666}.pdoc-code .mi{color:#666666}.pdoc-code .mo{color:#666666}.pdoc-code .sa{color:#BA2121}.pdoc-code .sb{color:#BA2121}.pdoc-code .sc{color:#BA2121}.pdoc-code .dl{color:#BA2121}.pdoc-code .sd{color:#BA2121; font-style:italic}.pdoc-code .s2{color:#BA2121}.pdoc-code .se{color:#AA5D1F; font-weight:bold}.pdoc-code .sh{color:#BA2121}.pdoc-code .si{color:#A45A77; font-weight:bold}.pdoc-code .sx{color:#008000}.pdoc-code .sr{color:#A45A77}.pdoc-code .s1{color:#BA2121}.pdoc-code .ss{color:#19177C}.pdoc-code .bp{color:#008000}.pdoc-code .fm{color:#0000FF}.pdoc-code .vc{color:#19177C}.pdoc-code .vg{color:#19177C}.pdoc-code .vi{color:#19177C}.pdoc-code .vm{color:#19177C}.pdoc-code .il{color:#666666}</style>
-    <style>/*! theme.css */:root{--pdoc-background:#fff;}.pdoc{--text:#212529;--muted:#6c757d;--link:#3660a5;--link-hover:#1659c5;--code:#f8f8f8;--active:#fff598;--accent:#eee;--accent2:#c1c1c1;--nav-hover:rgba(255, 255, 255, 0.5);--name:#0066BB;--def:#008800;--annotation:#007020;}</style>
+    <style>/*! syntax-highlighting.css */pre{  line-height:125%;}td.linenos pre{  color:#ff5555;  background-color:#282a36;  padding-left:5px;  padding-right:5px;}span.linenos{  color:#ff5555;  background-color:#282a36;  padding-left:5px;  padding-right:5px;}td.linenos pre.special{  color:#ff5555;  background-color:#ffffc0;  padding-left:5px;  padding-right:5px;}span.linenos.special{  color:#ff5555;  background-color:#ffffc0;  padding-left:5px;  padding-right:5px;}.pdoc-code .hll{  background-color:#282a36;}.pdoc-code{  background:#282a36;  color:#ff5555;}.pdoc-code .c{  color:#6a7aaa;}.pdoc-code .err{  color:#ff5555;}.pdoc-code .k{  color:#ff79c6;}.pdoc-code .l{  color:#ae81ff;}.pdoc-code .n{  color:#f8f8f2;}.pdoc-code{  color:#ff79c6;}.pdoc-code .p{  color:#f8f8f2;}.pdoc-code .ch{  color:#6a7aaa;}.pdoc-code .cm{  color:#6a7aaa;}.pdoc-code .cp{  color:#6a7aaa;}.pdoc-code .cpf{  color:#6a7aaa;}.pdoc-code .c1{  color:var(--silver);}.pdoc-code .cs{  color:#6a7aaa;}.pdoc-code .gd{  color:#6a7aaa;}.pdoc-code .ge{  font-style:italic;}.pdoc-code .gi{  color:#a6e22e;}.pdoc-code .go{  color:whitesmoke;}.pdoc-code .gp{  color:rgb(171, 138, 193);  font-weight:bold;}.pdoc-code .gs{  font-weight:bold;}.pdoc-code .gu{  color:#75715e;}.pdoc-code .kc{  color:white;}.pdoc-code .kd{  color:rgb(171, 138, 193);}.pdoc-code .kn{  color:var(--red);}.pdoc-code .kp{  color:rgb(171, 138, 193);}.pdoc-code .kr{  color:rgb(171, 138, 193);}.pdoc-code .kt{  color:#ff79c6;}.pdoc-code .o{  color:var(--red);}.pdoc-code .ld{  color:#e6db74;}.pdoc-code .m{  color:#ae81ff;}.pdoc-code .s{  color:var(--lightblue);}.pdoc-code .na{  color:#a6e22e;}.pdoc-code .nb{  color:var(--lightblue);}.pdoc-code .nc{  color:var(--purple);}.pdoc-code .no{  color:#ff79c6;}.pdoc-code .nd{  color:#8be9fd;}.pdoc-code .ni{  color:#ff79c6;}.pdoc-code .ne{  color:#8be9fd;}.pdoc-code .nf{  color:var(--purple);}.pdoc-code .nl{  color:#ed9d13;}.pdoc-code .nn{  color:#f8f8f2;}.pdoc-code .nx{  color:#a6e22e;}.pdoc-code .py{  color:#f8f8f2;}.pdoc-code .nt{  color:#f92672;}.pdoc-code .nv{  color:#f8f8f2;}.pdoc-code w{  color:#ff79c6;}.pdoc-code .w{  color:#f8f8f2;}.pdoc-code .mb{  color:#ae81ff;}.pdoc-code .mf{  color:#ae81ff;}.pdoc-code .mh{  color:var(--lightblue);}.pdoc-code .mi{  color:var(--lightblue);}.pdoc-code .mo{  color:#ae81ff;}.pdoc-code .sa{  color:var(--red);}.pdoc-code .sb{  color:#e6db74;}.pdoc-code .sc{  color:#e6db74;}.pdoc-code .dl{  color:#e6db74;}.pdoc-code .sd{  color:var(--blue);}.pdoc-code .s2{  color:var(--blue);}.pdoc-code .se{  color:var(--lightblue);}.pdoc-code .sh{  color:#e6db74;}.pdoc-code .si{  color:var(--lightblue);}.pdoc-code .sx{  color:#e6db74;}.pdoc-code .sr{  color:var(--blue);}.pdoc-code .s1{  color:var(--blue);}span.linenos{  color:rgb(59, 145, 226);  background-color:var(--code);}.pdoc-code .ss{  color:#e6db74;}.pdoc-code .bp{  color:whitesmoke;}.pdoc-code .fm{  color:var(--lightblue);}.pdoc-code .vc{  color:#bd93f9;}.pdoc-code .vg{  color:#f8f8f2;}.pdoc-code .vi{  color:#ffffff;}.pdoc-code .vm{  color:var(--lightblue);}.pdoc-code .il{  color:var(--lightblue);}</style>
+    <style>/*! theme.css */:root{  --pdoc-background:#282C34;}.pdoc{  --text:white;  --muted:whitesmoke;  --link:var(--lightblue);  --link-hover:white;  --active:#555;  --code:#232627;  --accent:#232627;    --lightblue:#61AFEF;  --red:#E06C75;  --green:#98C379;  --dark:#282C34;  --orange:#E5C07B;  --purple:#B392F0;  --blue:#9ECBFF;  --silver:#ABB2BF;}</style>
     <style>/*! layout.css */html, body{width:100%;height:100%;}html, main{scroll-behavior:smooth;}body{background-color:var(--pdoc-background);}@media (max-width:769px){#navtoggle{cursor:pointer;position:absolute;width:50px;height:40px;top:1rem;right:1rem;border-color:var(--text);color:var(--text);display:flex;opacity:0.8;z-index:999;}#navtoggle:hover{opacity:1;}#togglestate + div{display:none;}#togglestate:checked + div{display:inherit;}main, header{padding:2rem 3vw;}header + main{margin-top:-3rem;}.git-button{display:none !important;}nav input[type="search"]{max-width:77%;}nav input[type="search"]:first-child{margin-top:-6px;}nav input[type="search"]:valid ~ *{display:none !important;}}@media (min-width:770px){:root{--sidebar-width:clamp(12.5rem, 28vw, 22rem);}nav{position:fixed;overflow:auto;height:100vh;width:var(--sidebar-width);}main, header{padding:3rem 2rem 3rem calc(var(--sidebar-width) + 3rem);width:calc(54rem + var(--sidebar-width));max-width:100%;}header + main{margin-top:-4rem;}#navtoggle{display:none;}}#togglestate{position:absolute;height:0;opacity:0;}nav.pdoc{--pad:clamp(0.5rem, 2vw, 1.75rem);--indent:1.5rem;background-color:var(--accent);border-right:1px solid var(--accent2);box-shadow:0 0 20px rgba(50, 50, 50, .2) inset;padding:0 0 0 var(--pad);overflow-wrap:anywhere;scrollbar-width:thin; scrollbar-color:var(--accent2) transparent; z-index:1}nav.pdoc::-webkit-scrollbar{width:.4rem; }nav.pdoc::-webkit-scrollbar-thumb{background-color:var(--accent2); }nav.pdoc > div{padding:var(--pad) 0;}nav.pdoc .module-list-button{display:inline-flex;align-items:center;color:var(--text);border-color:var(--muted);margin-bottom:1rem;}nav.pdoc .module-list-button:hover{border-color:var(--text);}nav.pdoc input[type=search]{display:block;outline-offset:0;width:calc(100% - var(--pad));}nav.pdoc .logo{max-width:calc(100% - var(--pad));max-height:35vh;display:block;margin:0 auto 1rem;transform:translate(calc(-.5 * var(--pad)), 0);}nav.pdoc ul{list-style:none;padding-left:0;}nav.pdoc > div > ul{margin-left:calc(0px - var(--pad));}nav.pdoc li a{padding:.2rem 0 .2rem calc(var(--pad) + var(--indent));}nav.pdoc > div > ul > li > a{padding-left:var(--pad);}nav.pdoc li{transition:all 100ms;}nav.pdoc li:hover{background-color:var(--nav-hover);}nav.pdoc a, nav.pdoc a:hover{color:var(--text);}nav.pdoc a{display:block;}nav.pdoc > h2:first-of-type{margin-top:1.5rem;}nav.pdoc .class:before{content:"class ";color:var(--muted);}nav.pdoc .function:after{content:"()";color:var(--muted);}nav.pdoc footer:before{content:"";display:block;width:calc(100% - var(--pad));border-top:solid var(--accent2) 1px;margin-top:1.5rem;padding-top:.5rem;}nav.pdoc footer{font-size:small;}</style>
     <style>/*! content.css */.pdoc{color:var(--text);box-sizing:border-box;line-height:1.5;background:none;}.pdoc .pdoc-button{cursor:pointer;display:inline-block;border:solid black 1px;border-radius:2px;font-size:.75rem;padding:calc(0.5em - 1px) 1em;transition:100ms all;}.pdoc .alert{padding:1rem 1rem 1rem calc(1.5rem + 24px);border:1px solid transparent;border-radius:.25rem;background-repeat:no-repeat;background-position:.75rem center;margin-bottom:1rem;}.pdoc .alert > em{display:none;}.pdoc .alert > *:last-child{margin-bottom:0;}.pdoc .alert.note{color:#084298;background-color:#cfe2ff;border-color:#b6d4fe;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23084298%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2016A8%208%200%201%200%208%200a8%208%200%200%200%200%2016zm.93-9.412-1%204.705c-.07.34.029.533.304.533.194%200%20.487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703%200-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381%202.29-.287zM8%205.5a1%201%200%201%201%200-2%201%201%200%200%201%200%202z%22/%3E%3C/svg%3E");}.pdoc .alert.tip{color:#0a3622;background-color:#d1e7dd;border-color:#a3cfbb;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%230a3622%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%206a6%206%200%201%201%2010.174%204.31c-.203.196-.359.4-.453.619l-.762%201.769A.5.5%200%200%201%2010.5%2013a.5.5%200%200%201%200%201%20.5.5%200%200%201%200%201l-.224.447a1%201%200%200%201-.894.553H6.618a1%201%200%200%201-.894-.553L5.5%2015a.5.5%200%200%201%200-1%20.5.5%200%200%201%200-1%20.5.5%200%200%201-.46-.302l-.761-1.77a2%202%200%200%200-.453-.618A5.98%205.98%200%200%201%202%206m6-5a5%205%200%200%200-3.479%208.592c.263.254.514.564.676.941L5.83%2012h4.342l.632-1.467c.162-.377.413-.687.676-.941A5%205%200%200%200%208%201%22/%3E%3C/svg%3E");}.pdoc .alert.important{color:#055160;background-color:#cff4fc;border-color:#9eeaf9;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23055160%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%200a2%202%200%200%200-2%202v12a2%202%200%200%200%202%202h12a2%202%200%200%200%202-2V2a2%202%200%200%200-2-2zm6%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.warning{color:#664d03;background-color:#fff3cd;border-color:#ffecb5;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23664d03%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8.982%201.566a1.13%201.13%200%200%200-1.96%200L.165%2013.233c-.457.778.091%201.767.98%201.767h13.713c.889%200%201.438-.99.98-1.767L8.982%201.566zM8%205c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%205.995A.905.905%200%200%201%208%205zm.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2z%22/%3E%3C/svg%3E");}.pdoc .alert.caution{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M11.46.146A.5.5%200%200%200%2011.107%200H4.893a.5.5%200%200%200-.353.146L.146%204.54A.5.5%200%200%200%200%204.893v6.214a.5.5%200%200%200%20.146.353l4.394%204.394a.5.5%200%200%200%20.353.146h6.214a.5.5%200%200%200%20.353-.146l4.394-4.394a.5.5%200%200%200%20.146-.353V4.893a.5.5%200%200%200-.146-.353zM8%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.danger{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5.52.359A.5.5%200%200%201%206%200h4a.5.5%200%200%201%20.474.658L8.694%206H12.5a.5.5%200%200%201%20.395.807l-7%209a.5.5%200%200%201-.873-.454L6.823%209.5H3.5a.5.5%200%200%201-.48-.641l2.5-8.5z%22/%3E%3C/svg%3E");}.pdoc .visually-hidden{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border:0 !important;}.pdoc h1, .pdoc h2, .pdoc h3{font-weight:300;margin:.3em 0;padding:.2em 0;}.pdoc > section:not(.module-info) h1{font-size:1.5rem;font-weight:500;}.pdoc > section:not(.module-info) h2{font-size:1.4rem;font-weight:500;}.pdoc > section:not(.module-info) h3{font-size:1.3rem;font-weight:500;}.pdoc > section:not(.module-info) h4{font-size:1.2rem;}.pdoc > section:not(.module-info) h5{font-size:1.1rem;}.pdoc a{text-decoration:none;color:var(--link);}.pdoc a:hover{color:var(--link-hover);}.pdoc blockquote{margin-left:2rem;}.pdoc pre{border-top:1px solid var(--accent2);border-bottom:1px solid var(--accent2);margin-top:0;margin-bottom:1em;padding:.5rem 0 .5rem .5rem;overflow-x:auto;background-color:var(--code);}.pdoc code{color:var(--text);padding:.2em .4em;margin:0;font-size:85%;background-color:var(--accent);border-radius:6px;}.pdoc a > code{color:inherit;}.pdoc pre > code{display:inline-block;font-size:inherit;background:none;border:none;padding:0;}.pdoc > section:not(.module-info){margin-bottom:1.5rem;}.pdoc .modulename{margin-top:0;font-weight:bold;}.pdoc .modulename a{color:var(--link);transition:100ms all;}.pdoc .git-button{float:right;border:solid var(--link) 1px;}.pdoc .git-button:hover{background-color:var(--link);color:var(--pdoc-background);}.view-source-toggle-state,.view-source-toggle-state ~ .pdoc-code{display:none;}.view-source-toggle-state:checked ~ .pdoc-code{display:block;}.view-source-button{display:inline-block;float:right;font-size:.75rem;line-height:1.5rem;color:var(--muted);padding:0 .4rem 0 1.3rem;cursor:pointer;text-indent:-2px;}.view-source-button > span{visibility:hidden;}.module-info .view-source-button{float:none;display:flex;justify-content:flex-end;margin:-1.2rem .4rem -.2rem 0;}.view-source-button::before{position:absolute;content:"View Source";display:list-item;list-style-type:disclosure-closed;}.view-source-toggle-state:checked ~ .attr .view-source-button::before,.view-source-toggle-state:checked ~ .view-source-button::before{list-style-type:disclosure-open;}.pdoc .docstring{margin-bottom:1.5rem;}.pdoc section:not(.module-info) .docstring{margin-left:clamp(0rem, 5vw - 2rem, 1rem);}.pdoc .docstring .pdoc-code{margin-left:1em;margin-right:1em;}.pdoc h1:target,.pdoc h2:target,.pdoc h3:target,.pdoc h4:target,.pdoc h5:target,.pdoc h6:target,.pdoc .pdoc-code > pre > span:target{background-color:var(--active);box-shadow:-1rem 0 0 0 var(--active);}.pdoc .pdoc-code > pre > span:target{display:block;}.pdoc div:target > .attr,.pdoc section:target > .attr,.pdoc dd:target > a{background-color:var(--active);}.pdoc *{scroll-margin:2rem;}.pdoc .pdoc-code .linenos{user-select:none;}.pdoc .attr:hover{filter:contrast(0.95);}.pdoc section, .pdoc .classattr{position:relative;}.pdoc .headerlink{--width:clamp(1rem, 3vw, 2rem);position:absolute;top:0;left:calc(0rem - var(--width));transition:all 100ms ease-in-out;opacity:0;}.pdoc .headerlink::before{content:"#";display:block;text-align:center;width:var(--width);height:2.3rem;line-height:2.3rem;font-size:1.5rem;}.pdoc .attr:hover ~ .headerlink,.pdoc *:target > .headerlink,.pdoc .headerlink:hover{opacity:1;}.pdoc .attr{display:block;margin:.5rem 0 .5rem;padding:.4rem .4rem .4rem 1rem;background-color:var(--accent);overflow-x:auto;}.pdoc .classattr{margin-left:2rem;}.pdoc .decorator-deprecated{color:#842029;}.pdoc .decorator-deprecated ~ span{filter:grayscale(1) opacity(0.8);}.pdoc .name{color:var(--name);font-weight:bold;}.pdoc .def{color:var(--def);font-weight:bold;}.pdoc .signature{background-color:transparent;}.pdoc .param, .pdoc .return-annotation{white-space:pre;}.pdoc .signature.multiline .param{display:block;}.pdoc .signature.condensed .param{display:inline-block;}.pdoc .annotation{color:var(--annotation);}.pdoc .view-value-toggle-state,.pdoc .view-value-toggle-state ~ .default_value{display:none;}.pdoc .view-value-toggle-state:checked ~ .default_value{display:inherit;}.pdoc .view-value-button{font-size:.5rem;vertical-align:middle;border-style:dashed;margin-top:-0.1rem;}.pdoc .view-value-button:hover{background:white;}.pdoc .view-value-button::before{content:"show";text-align:center;width:2.2em;display:inline-block;}.pdoc .view-value-toggle-state:checked ~ .view-value-button::before{content:"hide";}.pdoc .inherited{margin-left:2rem;}.pdoc .inherited dt{font-weight:700;}.pdoc .inherited dt, .pdoc .inherited dd{display:inline;margin-left:0;margin-bottom:.5rem;}.pdoc .inherited dd:not(:last-child):after{content:", ";}.pdoc .inherited .class:before{content:"class ";}.pdoc .inherited .function a:after{content:"()";}.pdoc .search-result .docstring{overflow:auto;max-height:25vh;}.pdoc .search-result.focused > .attr{background-color:var(--active);}.pdoc .attribution{margin-top:2rem;display:block;opacity:0.5;transition:all 200ms;filter:grayscale(100%);}.pdoc .attribution:hover{opacity:1;filter:grayscale(0%);}.pdoc .attribution img{margin-left:5px;height:27px;vertical-align:bottom;width:50px;transition:all 200ms;}.pdoc table{display:block;width:max-content;max-width:100%;overflow:auto;margin-bottom:1rem;}.pdoc table th{font-weight:600;}.pdoc table th, .pdoc table td{padding:6px 13px;border:1px solid var(--accent2);}</style>
-    <style>/*! custom.css */</style></head>
+    <style>/*! custom.css */body{  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";}.pdoc .il{  color:#131416;}nav.pdoc a.pdoc-button.module-list-button{  display:none;}.pdoc .modulename a:hover{  color:whitesmoke;}.pdoc .classattr{  color:#fff;}.pdoc .docstring .pdoc-code{  background-color:#232627;}.pdoc pre{  width:fit-content;}.pdoc pre a{  color:whitesmoke;}.pdoc pre a:hover{  color:#676767;}.pdoc h2{  color:#fff;  font-weight:0;  margin:0.3em 0;  padding:0.2em 0;  content:"Module Content";}.pdoc h5{  color:white;  font-style:italic;}.pdoc .modulename{  color:#fff;  font-weight:0;}.pdoc-code .ow{  color:var(--red);}nav.pdoc a.function{  color:var(--purple);}nav.pdoc a.function:hover{  background-color:var(--dark);}nav.pdoc .function::after{  content:"";}nav.pdoc .function::before{  content:"fn ";  color:var(--red);}nav.pdoc a.class{  color:whitesmoke;}nav.pdoc .class::before{  content:"class ";  color:var(--red);}nav.pdoc .class::after{  content:"";}nav.pdoc a.class:hover{  color:#fff;  background-color:var(--dark);}nav.pdoc a.variable{  color:whitesmoke;}nav.pdoc a.variable::before{  content:"var ";  color:#9d9d9d;  color:var(--red);}nav.pdoc a.variable:hover{  color:#fff;  background-color:var(--dark);}nav.pdoc li a{  color:var(--purple);}nav.pdoc li a:hover{  background-color:var(--dark);}.pdoc span.default_value{  color:var(--lightblue);}.pdoc span.def{  font-weight:normal;  color:var(--red);}.pdoc h6#attributes{  color:#fff;  font-size:25px;}.pdoc h6#example{  color:#fff;  font-size:29px;}.pdoc h6#notes{  font-size:27px;  color:orange;}.pdoc h6#returns{  font-size:27px;  color:white;}.pdoc h6#parameters{  font-size:27px;  color:white;}.pdoc h6#raises{  font-size:27px;  color:rgb(218, 55, 55);}.pdoc .kc{  color:var(--lightblue);}.pdoc li{  color:white;}.pdoc .nd{  color:var(--lightblue);}.pdoc b,strong{  color:rgba(255, 255, 255, 0.8);  font-weight:normal;}.pdoc em{  color:orange;  font-size:23px;}.pdoc div.decorator{  color:var(--lightblue);}div.pdoc-code.codehilite{  background-color:var(--code);}.pdoc span.name{  color:var(--purple);  font-weight:normal;}.pdoc span.base{  color:whitesmoke;}.pdoc .inherited dt,.pdoc .inherited dt::before{  color:var(--silver);}.pdoc .inherited dd:not(:last-child)::after{  color:#fff;}.pdoc .inherited dd:not(:last-child)::after{  color:#fff;}.pdoc h1,.pdoc h2,.pdoc h3{  font-weight:300;  margin:0.3em 0;  padding:0.2em 0;  color:white;}nav.pdoc .module-list-button{  display:inline-flex;  align-items:center;  margin-bottom:1rem;  color:white;  border-color:white;}nav.pdoc .module-list-button:hover{  border-color:white;  color:white;}.pdoc pdoc-alert pdoc-alert-warning .p{  color:black;}.pdoc-code{  color:white;}.pdoc .pdoc-alert-warning{  color:black;  background-color:#d5a142;  border-color:black;}.pdoc .pdoc-alert-note{  color:rgb(7, 19, 24);  background-color:rgb(184, 231, 251) ;  border-color:var(--dark);}nav.pdoc{  background-color:rgb(55, 58, 72);}.pdoc-code .k{  color:var(--red);}</style></head>
 <body>
     <nav class="pdoc">
         <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
@@ -2081,35 +2081,30 @@ provides differentiable read/write access to an external memory
 bank.  The addressing backend (NTM, DNC, sliding window) is
 swappable.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    num_slots:  Number of memory slots.
+    slot_size:  Dimension of each slot.
+    num_reads:  Number of parallel read heads.
+    num_writes: Number of parallel write heads.
+    backend:    Addressing backend — "ntm", "dnc", "sliding",
+                or a MemoryBackend instance.</p>
 
-<ul>
-<li><strong>num_slots:</strong>   Number of memory slots.</li>
-<li><strong>slot_size:</strong>   Dimension of each slot.</li>
-<li><strong>num_reads:</strong>   Number of parallel read heads.</li>
-<li><strong>num_writes:</strong>  Number of parallel write heads.</li>
-<li><strong>backend:</strong>     Addressing backend — "ntm", "dnc", "sliding",
-or a MemoryBackend instance.</li>
-</ul>
+<p>Shapes:
+    Input:  (batch, slot_size) or (batch, seq_len, slot_size)
+    Output: (batch, num_reads, slot_size)  —  read vectors</p>
 
-<h6 id="shapes">Shapes:</h6>
-
-<blockquote>
-  <p>Input:  (batch, slot_size) or (batch, seq_len, slot_size)
-  Output: (batch, num_reads, slot_size)  —  read vectors</p>
-</blockquote>
-
-<h6 id="example">Example:</h6>
+<p>Example:</p>
 
 <blockquote>
-  <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">mem</span> <span class="o">=</span> <span class="n">Memory</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="n">num_reads</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;dnc&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">out</span><span class="p">,</span> <span class="n">state</span> <span class="o">=</span> <span class="n">mem</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>          <span class="c1"># read + write, internal state</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">out2</span><span class="p">,</span> <span class="n">state</span> <span class="o">=</span> <span class="n">mem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>  <span class="c1"># explicit state</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">state</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>        <span class="c1"># fresh state</span>
-</code></pre>
-  </div>
+  <blockquote>
+    <blockquote>
+      <p>mem = Memory(128, 64, num_reads=4, backend="dnc")
+      x = torch.randn(16, 64)
+      out, state = mem(x)          # read + write, internal state
+      out2, state = mem(x, state)  # explicit state
+      state = mem.reset(16)        # fresh state</p>
+    </blockquote>
+  </blockquote>
 </blockquote>
 </div>
 
@@ -2307,18 +2302,12 @@ which are uniform (1/num_slots).</p>
 
             <div class="docstring"><p>Read from memory without writing.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    query: (batch, slot_size) or (batch, seq_len, slot_size)
+    state: Current memory state (uses internal state if None).</p>
 
-<ul>
-<li><strong>query:</strong>  (batch, slot_size) or (batch, seq_len, slot_size)</li>
-<li><strong>state:</strong>  Current memory state (uses internal state if None).</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(read_vectors, new_state)</p>
-</blockquote>
+<p>Returns:
+    (read_vectors, new_state)</p>
 </div>
 
 
@@ -2380,19 +2369,13 @@ which are uniform (1/num_slots).</p>
 
             <div class="docstring"><p>Write to memory.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    key:   (batch, slot_size) — determines where to write.
+    value: (batch, slot_size) — content to write.
+    state: Current memory state.</p>
 
-<ul>
-<li><strong>key:</strong>    (batch, slot_size) — determines where to write.</li>
-<li><strong>value:</strong>  (batch, slot_size) — content to write.</li>
-<li><strong>state:</strong>  Current memory state.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>new_state  (memory matrix is updated)</p>
-</blockquote>
+<p>Returns:
+    new_state  (memory matrix is updated)</p>
 </div>
 
 
@@ -2457,18 +2440,12 @@ which are uniform (1/num_slots).</p>
 
 <p>Equivalent to: read(write(query)) as in the original NTM.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x:     (batch, slot_size) or (batch, seq_len, slot_size)
+    state: Optional initial state.</p>
 
-<ul>
-<li><strong>x:</strong>      (batch, slot_size) or (batch, seq_len, slot_size)</li>
-<li><strong>state:</strong>  Optional initial state.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(read_vectors, new_state)</p>
-</blockquote>
+<p>Returns:
+    (read_vectors, new_state)</p>
 </div>
 
 
@@ -2558,15 +2535,12 @@ which are uniform (1/num_slots).</p>
 This is the key theoretical contribution: memory state as a
 first-class tensor structure rather than a bag of optional hacks.</p>
 
-<h6 id="shapes-are-always">Shapes are always:</h6>
-
-<blockquote>
-  <p>memory:       (num_slots, slot_size)
-  usage:        (num_slots,)
-  link_matrix:  (num_slots, num_slots)
-  read_weights: (batch, num_reads, num_slots)
-  write_weights:(batch, num_writes, num_slots)</p>
-</blockquote>
+<p>Shapes are always:
+    memory:       (num_slots, slot_size)
+    usage:        (num_slots,)
+    link_matrix:  (num_slots, num_slots)
+    read_weights: (batch, num_reads, num_slots)
+    write_weights:(batch, num_writes, num_slots)</p>
 </div>
 
 
@@ -2995,13 +2969,10 @@ circular convolution and temporal interpolation.</p>
 
             <div class="docstring"><p>Produce read &amp; write weights from a query + current state.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>read_weights:   (batch, num_reads, num_slots)
-  write_params:   (batch, num_writes * (slot_size + slot_size + 1))
-  updated_state:  MemoryState (backends may mutate usage / links)</p>
-</blockquote>
+<p>Returns:
+    read_weights:   (batch, num_reads, num_slots)
+    write_params:   (batch, num_writes * (slot_size + slot_size + 1))
+    updated_state:  MemoryState (backends may mutate usage / links)</p>
 </div>
 
 
@@ -3414,13 +3385,10 @@ network with dynamic external memory", Nature 2016.</p>
 
             <div class="docstring"><p>Produce read &amp; write weights from a query + current state.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>read_weights:   (batch, num_reads, num_slots)
-  write_params:   (batch, num_writes * (slot_size + slot_size + 1))
-  updated_state:  MemoryState (backends may mutate usage / links)</p>
-</blockquote>
+<p>Returns:
+    read_weights:   (batch, num_reads, num_slots)
+    write_params:   (batch, num_writes * (slot_size + slot_size + 1))
+    updated_state:  MemoryState (backends may mutate usage / links)</p>
 </div>
 
 
@@ -3631,13 +3599,10 @@ read weight over them.</p>
 
             <div class="docstring"><p>Produce read &amp; write weights from a query + current state.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>read_weights:   (batch, num_reads, num_slots)
-  write_params:   (batch, num_writes * (slot_size + slot_size + 1))
-  updated_state:  MemoryState (backends may mutate usage / links)</p>
-</blockquote>
+<p>Returns:
+    read_weights:   (batch, num_reads, num_slots)
+    write_params:   (batch, num_writes * (slot_size + slot_size + 1))
+    updated_state:  MemoryState (backends may mutate usage / links)</p>
 </div>
 
 
@@ -3704,11 +3669,8 @@ read weight over them.</p>
 <p>The standard advantage estimator used by PPO.  A weighted
 combination of TD residuals where λ controls bias vs. variance.</p>
 
-<h6 id="references">References:</h6>
-
-<blockquote>
-  <p><a href="https://arxiv.org/abs/1506.02438">https://arxiv.org/abs/1506.02438</a></p>
-</blockquote>
+<p>References:
+    <a href="https://arxiv.org/abs/1506.02438">https://arxiv.org/abs/1506.02438</a></p>
 </div>
 
 
@@ -3799,23 +3761,17 @@ combination of TD residuals where λ controls bias vs. variance.</p>
 
             <div class="docstring"><p>Map a trajectory to per-step returns and advantages.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    rewards:  (T, B)  reward at each step.
+    values:   (T + 1, B)  value prediction at each step
+              (last element is the bootstrap / next-state value).
+    dones:    (T, B)  boolean episode-termination flags.
+    log_probs:  (T, B)  behaviour log-probs (off-policy only).
+    target_log_probs:  (T, B)  target log-probs (off-policy only).</p>
 
-<ul>
-<li><strong>rewards:</strong>   (T, B)  reward at each step.</li>
-<li><strong>values:</strong>    (T + 1, B)  value prediction at each step
-(last element is the bootstrap / next-state value).</li>
-<li><strong>dones:</strong>     (T, B)  boolean episode-termination flags.</li>
-<li><strong>log_probs:</strong>   (T, B)  behaviour log-probs (off-policy only).</li>
-<li><strong>target_log_probs:</strong>   (T, B)  target log-probs (off-policy only).</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>returns:     (T, B)
-  advantages:  (T, B)</p>
-</blockquote>
+<p>Returns:
+    returns:     (T, B)
+    advantages:  (T, B)</p>
 </div>
 
 
@@ -3881,11 +3837,8 @@ combination of TD residuals where λ controls bias vs. variance.</p>
 <p>λ = 0 is one-step TD (bootstrap immediately).
 λ = 1 is Monte Carlo (full empirical return).</p>
 
-<h6 id="references">References:</h6>
-
-<blockquote>
-  <p>Sutton &amp; Barto, "Reinforcement Learning: An Introduction", 2nd ed.</p>
-</blockquote>
+<p>References:
+    Sutton &amp; Barto, "Reinforcement Learning: An Introduction", 2nd ed.</p>
 </div>
 
 
@@ -3975,23 +3928,17 @@ combination of TD residuals where λ controls bias vs. variance.</p>
 
             <div class="docstring"><p>Map a trajectory to per-step returns and advantages.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    rewards:  (T, B)  reward at each step.
+    values:   (T + 1, B)  value prediction at each step
+              (last element is the bootstrap / next-state value).
+    dones:    (T, B)  boolean episode-termination flags.
+    log_probs:  (T, B)  behaviour log-probs (off-policy only).
+    target_log_probs:  (T, B)  target log-probs (off-policy only).</p>
 
-<ul>
-<li><strong>rewards:</strong>   (T, B)  reward at each step.</li>
-<li><strong>values:</strong>    (T + 1, B)  value prediction at each step
-(last element is the bootstrap / next-state value).</li>
-<li><strong>dones:</strong>     (T, B)  boolean episode-termination flags.</li>
-<li><strong>log_probs:</strong>   (T, B)  behaviour log-probs (off-policy only).</li>
-<li><strong>target_log_probs:</strong>   (T, B)  target log-probs (off-policy only).</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>returns:     (T, B)
-  advantages:  (T, B)</p>
-</blockquote>
+<p>Returns:
+    returns:     (T, B)
+    advantages:  (T, B)</p>
 </div>
 
 
@@ -4072,11 +4019,8 @@ combination of TD residuals where λ controls bias vs. variance.</p>
 <p>Used by IMPALA to correct for stale / behaviour policy lag.
 Clips importance weights to reduce variance.</p>
 
-<h6 id="references">References:</h6>
-
-<blockquote>
-  <p><a href="https://arxiv.org/abs/1802.01561">https://arxiv.org/abs/1802.01561</a></p>
-</blockquote>
+<p>References:
+    <a href="https://arxiv.org/abs/1802.01561">https://arxiv.org/abs/1802.01561</a></p>
 </div>
 
 
@@ -4203,23 +4147,17 @@ Clips importance weights to reduce variance.</p>
 
             <div class="docstring"><p>Map a trajectory to per-step returns and advantages.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    rewards:  (T, B)  reward at each step.
+    values:   (T + 1, B)  value prediction at each step
+              (last element is the bootstrap / next-state value).
+    dones:    (T, B)  boolean episode-termination flags.
+    log_probs:  (T, B)  behaviour log-probs (off-policy only).
+    target_log_probs:  (T, B)  target log-probs (off-policy only).</p>
 
-<ul>
-<li><strong>rewards:</strong>   (T, B)  reward at each step.</li>
-<li><strong>values:</strong>    (T + 1, B)  value prediction at each step
-(last element is the bootstrap / next-state value).</li>
-<li><strong>dones:</strong>     (T, B)  boolean episode-termination flags.</li>
-<li><strong>log_probs:</strong>   (T, B)  behaviour log-probs (off-policy only).</li>
-<li><strong>target_log_probs:</strong>   (T, B)  target log-probs (off-policy only).</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>returns:     (T, B)
-  advantages:  (T, B)</p>
-</blockquote>
+<p>Returns:
+    returns:     (T, B)
+    advantages:  (T, B)</p>
 </div>
 
 
@@ -4290,11 +4228,8 @@ Clips importance weights to reduce variance.</p>
 <p>Uses truncated importance weights to correct for off-policy
 action-value estimation.  Provably converges in expectation.</p>
 
-<h6 id="references">References:</h6>
-
-<blockquote>
-  <p><a href="https://arxiv.org/abs/1606.01247">https://arxiv.org/abs/1606.01247</a></p>
-</blockquote>
+<p>References:
+    <a href="https://arxiv.org/abs/1606.01247">https://arxiv.org/abs/1606.01247</a></p>
 </div>
 
 
@@ -4389,23 +4324,17 @@ action-value estimation.  Provably converges in expectation.</p>
 
             <div class="docstring"><p>Map a trajectory to per-step returns and advantages.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    rewards:  (T, B)  reward at each step.
+    values:   (T + 1, B)  value prediction at each step
+              (last element is the bootstrap / next-state value).
+    dones:    (T, B)  boolean episode-termination flags.
+    log_probs:  (T, B)  behaviour log-probs (off-policy only).
+    target_log_probs:  (T, B)  target log-probs (off-policy only).</p>
 
-<ul>
-<li><strong>rewards:</strong>   (T, B)  reward at each step.</li>
-<li><strong>values:</strong>    (T + 1, B)  value prediction at each step
-(last element is the bootstrap / next-state value).</li>
-<li><strong>dones:</strong>     (T, B)  boolean episode-termination flags.</li>
-<li><strong>log_probs:</strong>   (T, B)  behaviour log-probs (off-policy only).</li>
-<li><strong>target_log_probs:</strong>   (T, B)  target log-probs (off-policy only).</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>returns:     (T, B)
-  advantages:  (T, B)</p>
-</blockquote>
+<p>Returns:
+    returns:     (T, B)
+    advantages:  (T, B)</p>
 </div>
 
 
@@ -4669,29 +4598,20 @@ registered hooks while the latter silently ignores them.</p>
 to compute the optimal value function given a reward and
 transition kernel.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    num_states:  Number of discrete states.
+    num_actions: Number of discrete actions.
+    gamma:       Discount factor.
+    num_iters:   Number of VI iterations (depth of unrolling).</p>
 
-<ul>
-<li><strong>num_states:</strong>   Number of discrete states.</li>
-<li><strong>num_actions:</strong>  Number of discrete actions.</li>
-<li><strong>gamma:</strong>        Discount factor.</li>
-<li><strong>num_iters:</strong>    Number of VI iterations (depth of unrolling).</li>
-</ul>
+<p>Forward:
+    reward: (batch, num_states, num_actions)  — reward per (s,a)
+    kernel: (batch, num_states, num_actions, num_states) — transition probs
+    init_v: (batch, num_states) optional initial value.</p>
 
-<h6 id="forward">Forward:</h6>
-
-<blockquote>
-  <p>reward: (batch, num_states, num_actions)  — reward per (s,a)
-  kernel: (batch, num_states, num_actions, num_states) — transition probs
-  init_v: (batch, num_states) optional initial value.</p>
-</blockquote>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>values:   (batch, num_states) optimal value function
-  q_values: (batch, num_states, num_actions) optimal Q-function</p>
-</blockquote>
+<p>Returns:
+    values:   (batch, num_states) optimal value function
+    q_values: (batch, num_states, num_actions) optimal Q-function</p>
 
 <p>Gradients flow through the iterations, so the reward and
 transition models that produce (reward, kernel) are shaped
@@ -4900,30 +4820,21 @@ registered hooks while the latter silently ignores them.</p>
 steps.  Each step: select, expand, rollout (via learned value),
 backup.  Designed for use with MuZero-style latent dynamics.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    num_simulations: Number of MCTS simulations.
+    c_puct:          Exploration constant.
+    gamma:           Discount factor.</p>
 
-<ul>
-<li><strong>num_simulations:</strong>  Number of MCTS simulations.</li>
-<li><strong>c_puct:</strong>           Exploration constant.</li>
-<li><strong>gamma:</strong>            Discount factor.</li>
-</ul>
+<p>Forward:
+    prior_logits: (batch, num_actions) — policy prior from network
+    value:        (batch,) — root value prediction
+    latent:       (batch, latent_dim) — root latent state
+    dynamics:     callable (latent, action) -> (reward, next_latent)
+    predict:      callable (latent) -> (prior_logits, value)</p>
 
-<h6 id="forward">Forward:</h6>
-
-<blockquote>
-  <p>prior_logits: (batch, num_actions) — policy prior from network
-  value:        (batch,) — root value prediction
-  latent:       (batch, latent_dim) — root latent state
-  dynamics:     callable (latent, action) -> (reward, next_latent)
-  predict:      callable (latent) -> (prior_logits, value)</p>
-</blockquote>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>action_probs: (batch, num_actions) — improved policy after search
-  search_value: (batch,) — value after search</p>
-</blockquote>
+<p>Returns:
+    action_probs: (batch, num_actions) — improved policy after search
+    search_value: (batch,) — value after search</p>
 </div>
 
 
@@ -5084,42 +4995,29 @@ functions passed at call time.</p>
 
             <div class="docstring"><p>Successor representation (Dayan, 1993).</p>
 
-<h6 id="sr-factors-the-value-function-into">SR factors the value function into:</h6>
-
-<blockquote>
-  <p>V(s) = SR(s) · R</p>
-</blockquote>
-
-<p>where SR(s) = E[ Σ γ^t 1{s_t = s'} | s_0 = s, π ]
+<p>SR factors the value function into:
+    V(s) = SR(s) · R
+where SR(s) = E[ Σ γ^t 1{s_t = s'} | s_0 = s, π ]
 and R is a learned reward vector.</p>
 
 <p>This decouples reward from transition dynamics — when the
 reward changes, you only need to re-learn R, not the SR.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    num_states: Number of discrete states.
+    gamma:      Discount factor.
+    feature_dim: Dimension of the state features (for linear SR).</p>
 
-<ul>
-<li><strong>num_states:</strong>  Number of discrete states.</li>
-<li><strong>gamma:</strong>       Discount factor.</li>
-<li><strong>feature_dim:</strong>  Dimension of the state features (for linear SR).</li>
-</ul>
+<p>Forward:
+    features: (batch, feature_dim) — state features.
+    reward:   (batch, num_states) — reward per state (optional,
+              if not provided, returns SR matrix).</p>
 
-<h6 id="forward">Forward:</h6>
-
-<blockquote>
-  <p>features: (batch, feature_dim) — state features.
-  reward:   (batch, num_states) — reward per state (optional,
-            if not provided, returns SR matrix).</p>
-</blockquote>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>If reward is provided:
-      values: (batch,) — predicted value.
-  If reward is not provided:
-      sr: (batch, num_states) — successor representation.</p>
-</blockquote>
+<p>Returns:
+    If reward is provided:
+        values: (batch,) — predicted value.
+    If reward is not provided:
+        sr: (batch, num_states) — successor representation.</p>
 </div>
 
 
@@ -5481,11 +5379,8 @@ registered hooks while the latter silently ignores them.</p>
 The predictor is trained to match the target's output on seen
 states.  Error = novelty = intrinsic reward.</p>
 
-<h6 id="references">References:</h6>
-
-<blockquote>
-  <p><a href="https://arxiv.org/abs/1810.12894">https://arxiv.org/abs/1810.12894</a></p>
-</blockquote>
+<p>References:
+    <a href="https://arxiv.org/abs/1810.12894">https://arxiv.org/abs/1810.12894</a></p>
 </div>
 
 
@@ -5591,11 +5486,8 @@ states.  Error = novelty = intrinsic reward.</p>
 
             <div class="docstring"><p>Compute intrinsic reward for a batch of transitions.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>intrinsic_reward: (batch,) — added to extrinsic reward.</p>
-</blockquote>
+<p>Returns:
+    intrinsic_reward: (batch,) — added to extrinsic reward.</p>
 </div>
 
 
@@ -5679,11 +5571,8 @@ states.  Error = novelty = intrinsic reward.</p>
 <p>Curiosity = error in predicting the next state given (state, action).
 High error = novel dynamics = explore more.</p>
 
-<h6 id="references">References:</h6>
-
-<blockquote>
-  <p><a href="https://arxiv.org/abs/1705.05363">https://arxiv.org/abs/1705.05363</a></p>
-</blockquote>
+<p>References:
+    <a href="https://arxiv.org/abs/1705.05363">https://arxiv.org/abs/1705.05363</a></p>
 </div>
 
 
@@ -5791,11 +5680,8 @@ High error = novel dynamics = explore more.</p>
 
             <div class="docstring"><p>Compute intrinsic reward for a batch of transitions.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>intrinsic_reward: (batch,) — added to extrinsic reward.</p>
-</blockquote>
+<p>Returns:
+    intrinsic_reward: (batch,) — added to extrinsic reward.</p>
 </div>
 
 
@@ -5879,12 +5765,9 @@ High error = novel dynamics = explore more.</p>
 <p>Tracks visitation counts via a learned density model
 (a small MLP that outputs a pseudo-count).</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>state_dim:</strong>  State dimensionality.</li>
-<li><strong>reward_scale:</strong>  Scale factor for the bonus.</li>
-</ul>
+<p>Args:
+    state_dim: State dimensionality.
+    reward_scale: Scale factor for the bonus.</p>
 </div>
 
 
@@ -5964,11 +5847,8 @@ High error = novel dynamics = explore more.</p>
 
             <div class="docstring"><p>Compute intrinsic reward for a batch of transitions.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>intrinsic_reward: (batch,) — added to extrinsic reward.</p>
-</blockquote>
+<p>Returns:
+    intrinsic_reward: (batch,) — added to extrinsic reward.</p>
 </div>
 
 
@@ -6040,12 +5920,9 @@ High error = novel dynamics = explore more.</p>
 <p>An ensemble of forward dynamics models.  Disagreement in their
 predictions = epistemic uncertainty = exploration bonus.</p>
 
-<h6 id="references">References:</h6>
-
-<blockquote>
-  <p>Pathak et al., "Curiosity-driven Exploration by Self-Supervised Prediction", 2017
-  (ensemble variant popularized by exploration literature).</p>
-</blockquote>
+<p>References:
+    Pathak et al., "Curiosity-driven Exploration by Self-Supervised Prediction", 2017
+    (ensemble variant popularized by exploration literature).</p>
 </div>
 
 
@@ -6151,11 +6028,8 @@ predictions = epistemic uncertainty = exploration bonus.</p>
 
             <div class="docstring"><p>Compute intrinsic reward for a batch of transitions.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>intrinsic_reward: (batch,) — added to extrinsic reward.</p>
-</blockquote>
+<p>Returns:
+    intrinsic_reward: (batch,) — added to extrinsic reward.</p>
 </div>
 
 
@@ -6435,18 +6309,12 @@ and implement the required methods.</p>
 
             <div class="docstring"><p>Forward pass through the network.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x: Input tensor of shape (batch_size, input_dim) or
+       (batch_size, channels, height, width) for images</p>
 
-<ul>
-<li><strong>x:</strong>  Input tensor of shape (batch_size, input_dim) or
-(batch_size, channels, height, width) for images</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Output tensor</p>
-</blockquote>
+<p>Returns:
+    Output tensor</p>
 </div>
 
 
@@ -6485,18 +6353,12 @@ and implement the required methods.</p>
 
             <div class="docstring"><p>Get action from the model.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observation: Current observation
+    deterministic: Whether to return deterministic action</p>
 
-<ul>
-<li><strong>observation:</strong>  Current observation</li>
-<li><strong>deterministic:</strong>  Whether to return deterministic action</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Action tensor</p>
-</blockquote>
+<p>Returns:
+    Action tensor</p>
 </div>
 
 
@@ -6530,17 +6392,11 @@ and implement the required methods.</p>
 
             <div class="docstring"><p>Get value estimate for the observation.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observation: Current observation</p>
 
-<ul>
-<li><strong>observation:</strong>  Current observation</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Value estimate</p>
-</blockquote>
+<p>Returns:
+    Value estimate</p>
 </div>
 
 
@@ -6644,12 +6500,9 @@ and implement the required methods.</p>
 
             <div class="docstring"><p>Save model checkpoint.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>path:</strong>  Path to save checkpoint</li>
-<li><strong>include_optimizer:</strong>  Whether to include optimizer state</li>
-</ul>
+<p>Args:
+    path: Path to save checkpoint
+    include_optimizer: Whether to include optimizer state</p>
 </div>
 
 
@@ -6684,12 +6537,9 @@ and implement the required methods.</p>
 
             <div class="docstring"><p>Load model checkpoint.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>path:</strong>  Path to checkpoint</li>
-<li><strong>device:</strong>  Device to load model on</li>
-</ul>
+<p>Args:
+    path: Path to checkpoint
+    device: Device to load model on</p>
 </div>
 
 
@@ -6870,31 +6720,26 @@ and implement the required methods.</p>
 
             <div class="docstring"><p>Compile the model with torch.compile() for PyTorch 2.0+.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    mode: Compilation mode ('default', 'reduce-overhead', 'max-autotune')
+    dynamic: Enable dynamic shapes
+    fullgraph: Compile entire graph
+    backend: Backend to use
+    warmup: Run warmup iteration
+    example_inputs: Example inputs for warmup</p>
 
-<ul>
-<li><strong>mode:</strong>  Compilation mode ('default', 'reduce-overhead', 'max-autotune')</li>
-<li><strong>dynamic:</strong>  Enable dynamic shapes</li>
-<li><strong>fullgraph:</strong>  Compile entire graph</li>
-<li><strong>backend:</strong>  Backend to use</li>
-<li><strong>warmup:</strong>  Run warmup iteration</li>
-<li><strong>example_inputs:</strong>  Example inputs for warmup</li>
-</ul>
+<p>Returns:
+    Self for method chaining</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Self for method chaining</p>
-</blockquote>
-
-<h6 id="example">Example:</h6>
+<p>Example:</p>
 
 <blockquote>
-  <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">MLPNetwork</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;reduce-overhead&quot;</span><span class="p">)</span>
-</code></pre>
-  </div>
+  <blockquote>
+    <blockquote>
+      <p>model = MLPNetwork(config)
+      model.compile(mode="reduce-overhead")</p>
+    </blockquote>
+  </blockquote>
 </blockquote>
 </div>
 
@@ -7002,17 +6847,14 @@ and implement the required methods.</p>
 
             <div class="docstring"><p>Base configuration for agent models.</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>input_dim:</strong>  Dimension of input observations</li>
-<li><strong>action_dim:</strong>  Dimension of action space</li>
-<li><strong>hidden_dims:</strong>  List of hidden layer dimensions</li>
-<li><strong>activation:</strong>  Activation function name</li>
-<li><strong>dropout:</strong>  Dropout probability</li>
-<li><strong>use_layer_norm:</strong>  Whether to use layer normalization</li>
-<li><strong>use_batch_norm:</strong>  Whether to use batch normalization</li>
-</ul>
+<p>Attributes:
+    input_dim: Dimension of input observations
+    action_dim: Dimension of action space
+    hidden_dims: List of hidden layer dimensions
+    activation: Activation function name
+    dropout: Dropout probability
+    use_layer_norm: Whether to use layer normalization
+    use_batch_norm: Whether to use batch normalization</p>
 </div>
 
 
@@ -7303,22 +7145,20 @@ and implement the required methods.</p>
 <li>Orthogonal initialization</li>
 </ul>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    config: Model configuration</p>
 
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-</ul>
-
-<h6 id="example">Example:</h6>
+<p>Example:</p>
 
 <blockquote>
-  <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="n">ModelConfig</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">action_dim</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">hidden_dims</span><span class="o">=</span><span class="p">[</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mlp</span> <span class="o">=</span> <span class="n">MLPNetwork</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">output</span> <span class="o">=</span> <span class="n">mlp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</code></pre>
-  </div>
+  <blockquote>
+    <blockquote>
+      <p>config = ModelConfig(input_dim=10, action_dim=4, hidden_dims=[128, 64])
+      mlp = MLPNetwork(config)
+      x = torch.randn(32, 10)
+      output = mlp(x)</p>
+    </blockquote>
+  </blockquote>
 </blockquote>
 </div>
 
@@ -7639,13 +7479,10 @@ and implement the required methods.</p>
 
             <div class="docstring"><p>Generic CNN for image-based agents.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration (input_dim used as image channels)</li>
-<li><strong>image_shape:</strong>  Shape of input image (C, H, W)</li>
-<li><strong>features_dim:</strong>  Output feature dimension after CNN</li>
-</ul>
+<p>Args:
+    config: Model configuration (input_dim used as image channels)
+    image_shape: Shape of input image (C, H, W)
+    features_dim: Output feature dimension after CNN</p>
 </div>
 
 
@@ -7958,14 +7795,11 @@ and implement the required methods.</p>
 
 <p>Reference: Mnih et al., "Human-level control through deep reinforcement learning", Nature 2015.</p>
 
-<h6 id="architecture">Architecture:</h6>
-
-<blockquote>
-  <p>Conv(32, 8x8, stride=4) -> ReLU
-  Conv(64, 4x4, stride=2) -> ReLU
-  Conv(64, 3x3, stride=1) -> ReLU
-  FC(512) -> ReLU</p>
-</blockquote>
+<p>Architecture:
+    Conv(32, 8x8, stride=4) -> ReLU
+    Conv(64, 4x4, stride=2) -> ReLU
+    Conv(64, 3x3, stride=1) -> ReLU
+    FC(512) -> ReLU</p>
 </div>
 
 
@@ -8298,14 +8132,11 @@ and implement the required methods.</p>
 
 <p>Uses residual blocks for deeper networks with better gradient flow.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>image_shape:</strong>  Input image shape</li>
-<li><strong>num_blocks:</strong>  Number of residual blocks</li>
-<li><strong>base_channels:</strong>  Base number of channels</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    image_shape: Input image shape
+    num_blocks: Number of residual blocks
+    base_channels: Base number of channels</p>
 </div>
 
 
@@ -8665,15 +8496,12 @@ and implement the required methods.</p>
 
             <div class="docstring"><p>RNN-based agent for sequential observations.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>rnn_type:</strong>  Type of RNN ('rnn', 'lstm', 'gru')</li>
-<li><strong>hidden_size:</strong>  RNN hidden size</li>
-<li><strong>num_layers:</strong>  Number of RNN layers</li>
-<li><strong>bidirectional:</strong>  Whether to use bidirectional RNN</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    rnn_type: Type of RNN ('rnn', 'lstm', 'gru')
+    hidden_size: RNN hidden size
+    num_layers: Number of RNN layers
+    bidirectional: Whether to use bidirectional RNN</p>
 </div>
 
 
@@ -8871,18 +8699,12 @@ and implement the required methods.</p>
 
             <div class="docstring"><p>Forward through RNN.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x: Input tensor (batch_size, seq_len, input_dim) or (batch_size, input_dim)
+    hidden_state: Previous hidden state</p>
 
-<ul>
-<li><strong>x:</strong>  Input tensor (batch_size, seq_len, input_dim) or (batch_size, input_dim)</li>
-<li><strong>hidden_state:</strong>  Previous hidden state</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Output and new hidden state</p>
-</blockquote>
+<p>Returns:
+    Output and new hidden state</p>
 </div>
 
 
@@ -9179,13 +9001,10 @@ and implement the required methods.</p>
 <p>Designed for PPO and other policy gradient methods
 that need both action probabilities and value estimates.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>hidden_size:</strong>  LSTM hidden size</li>
-<li><strong>num_layers:</strong>  Number of LSTM layers</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    hidden_size: LSTM hidden size
+    num_layers: Number of LSTM layers</p>
 </div>
 
 
@@ -9331,11 +9150,8 @@ that need both action probabilities and value estimates.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(actor_output, critic_output, new_hidden)</p>
-</blockquote>
+<p>Returns:
+    (actor_output, critic_output, new_hidden)</p>
 </div>
 
 
@@ -9672,13 +9488,10 @@ that need both action probabilities and value estimates.</p>
 
 <p>Simpler alternative to LSTM with fewer parameters.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>hidden_size:</strong>  GRU hidden size</li>
-<li><strong>num_layers:</strong>  Number of GRU layers</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    hidden_size: GRU hidden size
+    num_layers: Number of GRU layers</p>
 </div>
 
 
@@ -10059,12 +9872,9 @@ that need both action probabilities and value estimates.</p>
 
 <p>Reference: Mnih et al., "Human-level control through deep reinforcement learning", Nature 2015.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>image_input:</strong>  Whether input is image (CHW) or vector</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    image_input: Whether input is image (CHW) or vector</p>
 </div>
 
 
@@ -10241,13 +10051,10 @@ that need both action probabilities and value estimates.</p>
 
             <div class="docstring"><p>Get action using epsilon-greedy policy.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>observation:</strong>  Current observation</li>
-<li><strong>deterministic:</strong>  If True, ignore epsilon and take argmax</li>
-<li><strong>epsilon:</strong>  Exploration rate for epsilon-greedy</li>
-</ul>
+<p>Args:
+    observation: Current observation
+    deterministic: If True, ignore epsilon and take argmax
+    epsilon: Exploration rate for epsilon-greedy</p>
 </div>
 
 
@@ -10410,12 +10217,9 @@ that need both action probabilities and value estimates.</p>
 
 <p>Reference: Wang et al., "Dueling Network Architectures for Deep Reinforcement Learning", ICML 2016.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>image_input:</strong>  Whether input is image</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    image_input: Whether input is image</p>
 </div>
 
 
@@ -10761,13 +10565,10 @@ that need both action probabilities and value estimates.</p>
 
 <p>Reference: Fortunato et al., "Noisy Networks for Exploration", ICLR 2018.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>image_input:</strong>  Whether input is image</li>
-<li><strong>sigma0:</strong>  Initial noise standard deviation</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    image_input: Whether input is image
+    sigma0: Initial noise standard deviation</p>
 </div>
 
 
@@ -11098,12 +10899,9 @@ In eval mode, use deterministic=True for greedy actions.</p>
 <p>Outputs action probabilities for discrete actions or
 mean/std for continuous actions.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>continuous:</strong>  Whether action space is continuous</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    continuous: Whether action space is continuous</p>
 </div>
 
 
@@ -11702,12 +11500,9 @@ mean/std for continuous actions.</p>
 
 <p>Shares backbone between actor and critic for efficiency.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>continuous:</strong>  Whether action space is continuous</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    continuous: Whether action space is continuous</p>
 </div>
 
 
@@ -11828,11 +11623,8 @@ mean/std for continuous actions.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(action_output, value)</p>
-</blockquote>
+<p>Returns:
+    (action_output, value)</p>
 </div>
 
 
@@ -11982,11 +11774,8 @@ mean/std for continuous actions.</p>
 
             <div class="docstring"><p>Get action, log_prob, entropy, and value in single forward pass.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(action, log_prob, entropy, value)</p>
-</blockquote>
+<p>Returns:
+    (action, log_prob, entropy, value)</p>
 </div>
 
 
@@ -12037,11 +11826,8 @@ mean/std for continuous actions.</p>
 
             <div class="docstring"><p>Evaluate actions (for PPO update).</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(log_prob, entropy, value)</p>
-</blockquote>
+<p>Returns:
+    (log_prob, entropy, value)</p>
 </div>
 
 
@@ -12245,14 +12031,11 @@ mean/std for continuous actions.</p>
 
 <p>Reference: Mnih et al., "Asynchronous Methods for Deep Reinforcement Learning", ICML 2016.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>image_input:</strong>  Whether input is image</li>
-<li><strong>use_lstm:</strong>  Whether to add LSTM layer</li>
-<li><strong>lstm_hidden:</strong>  LSTM hidden size</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    image_input: Whether input is image
+    use_lstm: Whether to add LSTM layer
+    lstm_hidden: LSTM hidden size</p>
 </div>
 
 
@@ -12416,18 +12199,12 @@ mean/std for continuous actions.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x: Input tensor
+    hidden: LSTM hidden state (if using LSTM)</p>
 
-<ul>
-<li><strong>x:</strong>  Input tensor</li>
-<li><strong>hidden:</strong>  LSTM hidden state (if using LSTM)</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(actor_logits, value, new_hidden)</p>
-</blockquote>
+<p>Returns:
+    (actor_logits, value, new_hidden)</p>
 </div>
 
 
@@ -12531,11 +12308,8 @@ mean/std for continuous actions.</p>
 
             <div class="docstring"><p>Get action, log_prob, entropy, and value.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(action, log_prob, entropy, value)</p>
-</blockquote>
+<p>Returns:
+    (action, log_prob, entropy, value)</p>
 </div>
 
 
@@ -12574,11 +12348,8 @@ mean/std for continuous actions.</p>
 
             <div class="docstring"><p>Evaluate actions.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(log_prob, entropy, value)</p>
-</blockquote>
+<p>Returns:
+    (log_prob, entropy, value)</p>
 </div>
 
 
@@ -12791,12 +12562,9 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
 <p>Reference: Haarnoja et al., "Soft Actor-Critic: Off-Policy Maximum Entropy Deep RL", ICML 2018.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>action_bounds:</strong>  Tuple of (min, max) action values</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    action_bounds: Tuple of (min, max) action values</p>
 </div>
 
 
@@ -12915,11 +12683,8 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(mean, log_std)</p>
-</blockquote>
+<p>Returns:
+    (mean, log_std)</p>
 </div>
 
 
@@ -12957,11 +12722,8 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Get squashed Gaussian distribution.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>TransformedDistribution (squashed Gaussian)</p>
-</blockquote>
+<p>Returns:
+    TransformedDistribution (squashed Gaussian)</p>
 </div>
 
 
@@ -13022,19 +12784,13 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Get action.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observation: Current observation
+    deterministic: Use mean action
+    with_log_prob: Also return log probability</p>
 
-<ul>
-<li><strong>observation:</strong>  Current observation</li>
-<li><strong>deterministic:</strong>  Use mean action</li>
-<li><strong>with_log_prob:</strong>  Also return log probability</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>action, (log_prob if with_log_prob)</p>
-</blockquote>
+<p>Returns:
+    action, (log_prob if with_log_prob)</p>
 </div>
 
 
@@ -13523,12 +13279,9 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
 <p>Reference: Fujimoto et al., "Addressing Function Approximation Error in Actor-Critic Methods", ICML 2018.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>action_bounds:</strong>  Tuple of (min, max) action values</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    action_bounds: Tuple of (min, max) action values</p>
 </div>
 
 
@@ -13671,13 +13424,10 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Get action.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>observation:</strong>  Current observation</li>
-<li><strong>deterministic:</strong>  Use deterministic action</li>
-<li><strong>noise:</strong>  Optional noise to add for exploration</li>
-</ul>
+<p>Args:
+    observation: Current observation
+    deterministic: Use deterministic action
+    noise: Optional noise to add for exploration</p>
 </div>
 
 
@@ -14020,16 +13770,13 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
 <p>Uses self-attention to process sequences of observations.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>embed_dim:</strong>  Embedding dimension</li>
-<li><strong>num_heads:</strong>  Number of attention heads</li>
-<li><strong>num_layers:</strong>  Number of transformer layers</li>
-<li><strong>max_seq_len:</strong>  Maximum sequence length</li>
-<li><strong>dropout:</strong>  Dropout probability</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    embed_dim: Embedding dimension
+    num_heads: Number of attention heads
+    num_layers: Number of transformer layers
+    max_seq_len: Maximum sequence length
+    dropout: Dropout probability</p>
 </div>
 
 
@@ -14236,18 +13983,12 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x: Input tensor (batch, seq_len, input_dim)
+    mask: Optional attention mask</p>
 
-<ul>
-<li><strong>x:</strong>  Input tensor (batch, seq_len, input_dim)</li>
-<li><strong>mask:</strong>  Optional attention mask</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Output tensor (batch, seq_len, embed_dim)</p>
-</blockquote>
+<p>Returns:
+    Output tensor (batch, seq_len, embed_dim)</p>
 </div>
 
 
@@ -14531,17 +14272,14 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
 <p>Models trajectories as sequences of (state, action, return-to-go).</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>embed_dim:</strong>  Embedding dimension</li>
-<li><strong>num_heads:</strong>  Number of attention heads</li>
-<li><strong>num_layers:</strong>  Number of transformer layers</li>
-<li><strong>max_seq_len:</strong>  Maximum sequence length</li>
-<li><strong>max_ep_len:</strong>  Maximum episode length</li>
-<li><strong>dropout:</strong>  Dropout probability</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    embed_dim: Embedding dimension
+    num_heads: Number of attention heads
+    num_layers: Number of transformer layers
+    max_seq_len: Maximum sequence length
+    max_ep_len: Maximum episode length
+    dropout: Dropout probability</p>
 </div>
 
 
@@ -14812,19 +14550,13 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    states: States (batch, seq_len, state_dim)
+    actions: Actions (batch, seq_len, action_dim)
+    returns_to_go: Returns to go (batch, seq_len, 1)</p>
 
-<ul>
-<li><strong>states:</strong>  States (batch, seq_len, state_dim)</li>
-<li><strong>actions:</strong>  Actions (batch, seq_len, action_dim)</li>
-<li><strong>returns_to_go:</strong>  Returns to go (batch, seq_len, 1)</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Predicted actions (batch, seq_len, action_dim)</p>
-</blockquote>
+<p>Returns:
+    Predicted actions (batch, seq_len, action_dim)</p>
 </div>
 
 
@@ -14897,20 +14629,14 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Get action for current timestep.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observation: Current observation (batch, state_dim)
+    returns_to_go: Current return-to-go (batch, 1)
+    past_actions: Past actions in episode (batch, past_len, action_dim)
+    deterministic: Whether to use deterministic action</p>
 
-<ul>
-<li><strong>observation:</strong>  Current observation (batch, state_dim)</li>
-<li><strong>returns_to_go:</strong>  Current return-to-go (batch, 1)</li>
-<li><strong>past_actions:</strong>  Past actions in episode (batch, past_len, action_dim)</li>
-<li><strong>deterministic:</strong>  Whether to use deterministic action</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Action (batch, action_dim)</p>
-</blockquote>
+<p>Returns:
+    Action (batch, action_dim)</p>
 </div>
 
 
@@ -15057,16 +14783,13 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
 <p>Uses a bottleneck of latent variables to process inputs efficiently.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>config:</strong>  Model configuration</li>
-<li><strong>embed_dim:</strong>  Embedding dimension</li>
-<li><strong>num_latents:</strong>  Number of latent variables</li>
-<li><strong>num_heads:</strong>  Number of attention heads</li>
-<li><strong>num_layers:</strong>  Number of transformer layers</li>
-<li><strong>dropout:</strong>  Dropout probability</li>
-</ul>
+<p>Args:
+    config: Model configuration
+    embed_dim: Embedding dimension
+    num_latents: Number of latent variables
+    num_heads: Number of attention heads
+    num_layers: Number of transformer layers
+    dropout: Dropout probability</p>
 </div>
 
 
@@ -15208,17 +14931,11 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x: Input tensor (batch, seq_len, input_dim)</p>
 
-<ul>
-<li><strong>x:</strong>  Input tensor (batch, seq_len, input_dim)</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Latent representation (batch, num_latents, embed_dim)</p>
-</blockquote>
+<p>Returns:
+    Latent representation (batch, num_latents, embed_dim)</p>
 </div>
 
 
@@ -15385,14 +15102,11 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Self-attention mechanism.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>embed_dim:</strong>  Embedding dimension</li>
-<li><strong>num_heads:</strong>  Number of attention heads</li>
-<li><strong>dropout:</strong>  Dropout probability</li>
-<li><strong>bias:</strong>  Whether to use bias in linear layers</li>
-</ul>
+<p>Args:
+    embed_dim: Embedding dimension
+    num_heads: Number of attention heads
+    dropout: Dropout probability
+    bias: Whether to use bias in linear layers</p>
 </div>
 
 
@@ -15569,18 +15283,12 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x: Input tensor (batch, seq_len, embed_dim)
+    mask: Optional attention mask</p>
 
-<ul>
-<li><strong>x:</strong>  Input tensor (batch, seq_len, embed_dim)</li>
-<li><strong>mask:</strong>  Optional attention mask</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Output tensor (batch, seq_len, embed_dim)</p>
-</blockquote>
+<p>Returns:
+    Output tensor (batch, seq_len, embed_dim)</p>
 </div>
 
 
@@ -15879,20 +15587,14 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    query: Query tensor (batch, seq_len_q, embed_dim)
+    key: Key tensor (batch, seq_len_k, embed_dim)
+    value: Value tensor (batch, seq_len_k, embed_dim)
+    mask: Optional attention mask</p>
 
-<ul>
-<li><strong>query:</strong>  Query tensor (batch, seq_len_q, embed_dim)</li>
-<li><strong>key:</strong>  Key tensor (batch, seq_len_k, embed_dim)</li>
-<li><strong>value:</strong>  Value tensor (batch, seq_len_k, embed_dim)</li>
-<li><strong>mask:</strong>  Optional attention mask</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Output tensor (batch, seq_len_q, embed_dim)</p>
-</blockquote>
+<p>Returns:
+    Output tensor (batch, seq_len_q, embed_dim)</p>
 </div>
 
 
@@ -16216,17 +15918,14 @@ Uses squashed Gaussian for bounded action spaces.</p>
 <li>Read and write heads</li>
 </ul>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>input_size:</strong>  Input feature size</li>
-<li><strong>memory_size:</strong>  Number of memory slots</li>
-<li><strong>memory_dim:</strong>  Dimension of each memory slot</li>
-<li><strong>num_reads:</strong>  Number of read heads</li>
-<li><strong>num_writes:</strong>  Number of write heads</li>
-<li><strong>controller_type:</strong>  Type of controller ('lstm' or 'gru')</li>
-<li><strong>controller_hidden:</strong>  Controller hidden size</li>
-</ul>
+<p>Args:
+    input_size: Input feature size
+    memory_size: Number of memory slots
+    memory_dim: Dimension of each memory slot
+    num_reads: Number of read heads
+    num_writes: Number of write heads
+    controller_type: Type of controller ('lstm' or 'gru')
+    controller_hidden: Controller hidden size</p>
 </div>
 
 
@@ -16582,18 +16281,12 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x: Input (batch, seq_len, input_size)
+    hidden: Controller hidden state</p>
 
-<ul>
-<li><strong>x:</strong>  Input (batch, seq_len, input_size)</li>
-<li><strong>hidden:</strong>  Controller hidden state</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>(output, new_hidden)</p>
-</blockquote>
+<p>Returns:
+    (output, new_hidden)</p>
 </div>
 
 
@@ -16807,14 +16500,11 @@ Uses squashed Gaussian for bounded action spaces.</p>
 <li>Communication mechanisms</li>
 </ul>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>num_agents:</strong>  Number of agents in the system</li>
-<li><strong>obs_dim:</strong>  Observation dimension per agent</li>
-<li><strong>action_dim:</strong>  Action dimension per agent</li>
-<li><strong>shared_params:</strong>  Whether agents share parameters</li>
-</ul>
+<p>Args:
+    num_agents: Number of agents in the system
+    obs_dim: Observation dimension per agent
+    action_dim: Action dimension per agent
+    shared_params: Whether agents share parameters</p>
 </div>
 
 
@@ -16894,17 +16584,11 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observations: Observations for all agents (batch, num_agents, obs_dim)</p>
 
-<ul>
-<li><strong>observations:</strong>  Observations for all agents (batch, num_agents, obs_dim)</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Outputs for all agents</p>
-</blockquote>
+<p>Returns:
+    Outputs for all agents</p>
 </div>
 
 
@@ -16943,18 +16627,12 @@ Uses squashed Gaussian for bounded action spaces.</p>
 
             <div class="docstring"><p>Get actions for all agents.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observations: Observations for all agents
+    deterministic: Whether to use deterministic actions</p>
 
-<ul>
-<li><strong>observations:</strong>  Observations for all agents</li>
-<li><strong>deterministic:</strong>  Whether to use deterministic actions</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Actions for all agents (batch, num_agents, action_dim)</p>
-</blockquote>
+<p>Returns:
+    Actions for all agents (batch, num_agents, action_dim)</p>
 </div>
 
 
@@ -17175,15 +16853,12 @@ Uses squashed Gaussian for bounded action spaces.</p>
 <p>Each agent has its own actor, but critics have access to
 all agents' observations and actions during training.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>num_agents:</strong>  Number of agents</li>
-<li><strong>obs_dim:</strong>  Observation dimension per agent</li>
-<li><strong>action_dim:</strong>  Action dimension per agent</li>
-<li><strong>hidden_dims:</strong>  Hidden layer dimensions</li>
-<li><strong>shared_params:</strong>  Whether agents share parameters</li>
-</ul>
+<p>Args:
+    num_agents: Number of agents
+    obs_dim: Observation dimension per agent
+    action_dim: Action dimension per agent
+    hidden_dims: Hidden layer dimensions
+    shared_params: Whether agents share parameters</p>
 </div>
 
 
@@ -17290,17 +16965,11 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Forward pass through actors.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observations: (batch, num_agents, obs_dim)</p>
 
-<ul>
-<li><strong>observations:</strong>  (batch, num_agents, obs_dim)</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Actions (batch, num_agents, action_dim)</p>
-</blockquote>
+<p>Returns:
+    Actions (batch, num_agents, action_dim)</p>
 </div>
 
 
@@ -17345,19 +17014,13 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Get actions for all agents.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observations: (batch, num_agents, obs_dim)
+    deterministic: Whether to use deterministic actions
+    noise: Optional exploration noise std</p>
 
-<ul>
-<li><strong>observations:</strong>  (batch, num_agents, obs_dim)</li>
-<li><strong>deterministic:</strong>  Whether to use deterministic actions</li>
-<li><strong>noise:</strong>  Optional exploration noise std</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Actions (batch, num_agents, action_dim)</p>
-</blockquote>
+<p>Returns:
+    Actions (batch, num_agents, action_dim)</p>
 </div>
 
 
@@ -17400,18 +17063,12 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Get Q-value from centralized critic.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observations: (batch, num_agents, obs_dim)
+    actions: (batch, num_agents, action_dim)</p>
 
-<ul>
-<li><strong>observations:</strong>  (batch, num_agents, obs_dim)</li>
-<li><strong>actions:</strong>  (batch, num_agents, action_dim)</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Q-value (batch,)</p>
-</blockquote>
+<p>Returns:
+    Q-value (batch,)</p>
 </div>
 
 
@@ -17620,15 +17277,12 @@ all agents' observations and actions during training.</p>
 
 <p>Mixes individual agent Q-values using a monotonic mixing network.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>num_agents:</strong>  Number of agents</li>
-<li><strong>obs_dim:</strong>  Observation dimension per agent</li>
-<li><strong>action_dim:</strong>  Action dimension per agent</li>
-<li><strong>hidden_dim:</strong>  Hidden dimension for agent networks</li>
-<li><strong>mixing_embed_dim:</strong>  Embedding dimension for mixing network</li>
-</ul>
+<p>Args:
+    num_agents: Number of agents
+    obs_dim: Observation dimension per agent
+    action_dim: Action dimension per agent
+    hidden_dim: Hidden dimension for agent networks
+    mixing_embed_dim: Embedding dimension for mixing network</p>
 </div>
 
 
@@ -17819,19 +17473,13 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observations: (batch, num_agents, obs_dim)
+    actions: (batch, num_agents, action_dim) - one-hot actions
+    global_state: (batch, state_dim) - global state for mixing</p>
 
-<ul>
-<li><strong>observations:</strong>  (batch, num_agents, obs_dim)</li>
-<li><strong>actions:</strong>  (batch, num_agents, action_dim) - one-hot actions</li>
-<li><strong>global_state:</strong>  (batch, state_dim) - global state for mixing</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Mixed Q-value (batch,)</p>
-</blockquote>
+<p>Returns:
+    Mixed Q-value (batch,)</p>
 </div>
 
 
@@ -18024,14 +17672,11 @@ all agents' observations and actions during training.</p>
 
 <p>Reference: Sunehag et al., "Value-Decomposition Networks For Cooperative Multi-Agent Learning", AAMAS 2018.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>num_agents:</strong>  Number of agents</li>
-<li><strong>obs_dim:</strong>  Observation dimension per agent</li>
-<li><strong>action_dim:</strong>  Action dimension per agent</li>
-<li><strong>hidden_dim:</strong>  Hidden dimension</li>
-</ul>
+<p>Args:
+    num_agents: Number of agents
+    obs_dim: Observation dimension per agent
+    action_dim: Action dimension per agent
+    hidden_dim: Hidden dimension</p>
 </div>
 
 
@@ -18134,18 +17779,12 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    observations: (batch, num_agents, obs_dim)
+    actions: (batch, num_agents, action_dim) - one-hot</p>
 
-<ul>
-<li><strong>observations:</strong>  (batch, num_agents, obs_dim)</li>
-<li><strong>actions:</strong>  (batch, num_agents, action_dim) - one-hot</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Total Q-value (batch,)</p>
-</blockquote>
+<p>Returns:
+    Total Q-value (batch,)</p>
 </div>
 
 
@@ -18249,12 +17888,9 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Orthogonal initialization for weights.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>module:</strong>  Module to initialize</li>
-<li><strong>gain:</strong>  Scaling factor</li>
-</ul>
+<p>Args:
+    module: Module to initialize
+    gain: Scaling factor</p>
 </div>
 
 
@@ -18287,12 +17923,9 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Xavier/Glorot initialization for weights.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>module:</strong>  Module to initialize</li>
-<li><strong>gain:</strong>  Scaling factor</li>
-</ul>
+<p>Args:
+    module: Module to initialize
+    gain: Scaling factor</p>
 </div>
 
 
@@ -18367,13 +18000,10 @@ all agents' observations and actions during training.</p>
 
 <p>Maintains running mean and variance estimates.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>num_features:</strong>  Number of features</li>
-<li><strong>decay:</strong>  Decay factor for running statistics</li>
-<li><strong>eps:</strong>  Epsilon for numerical stability</li>
-</ul>
+<p>Args:
+    num_features: Number of features
+    decay: Decay factor for running statistics
+    eps: Epsilon for numerical stability</p>
 </div>
 
 
@@ -18555,12 +18185,9 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Layer normalization for 2D inputs (images).</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>num_channels:</strong>  Number of channels</li>
-<li><strong>eps:</strong>  Epsilon for numerical stability</li>
-</ul>
+<p>Args:
+    num_channels: Number of channels
+    eps: Epsilon for numerical stability</p>
 </div>
 
 
@@ -18666,11 +18293,8 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Forward pass.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>x:</strong>  Input tensor (B, C, H, W)</li>
-</ul>
+<p>Args:
+    x: Input tensor (B, C, H, W)</p>
 </div>
 
 
@@ -18769,16 +18393,13 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Configuration for torch.compile().</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>mode:</strong>  Compilation mode ('default', 'reduce-overhead', 'max-autotune', 'max-autotune-no-cudagraphs')</li>
-<li><strong>dynamic:</strong>  Enable dynamic shapes support</li>
-<li><strong>fullgraph:</strong>  Compile entire graph (no Python fallback)</li>
-<li><strong>backend:</strong>  Backend to use ('inductor', 'cudagraphs', 'onnxrt', 'tvm', etc.)</li>
-<li><strong>options:</strong>  Additional backend-specific options</li>
-<li><strong>disable:</strong>  Disable compilation (useful for debugging)</li>
-</ul>
+<p>Attributes:
+    mode: Compilation mode ('default', 'reduce-overhead', 'max-autotune', 'max-autotune-no-cudagraphs')
+    dynamic: Enable dynamic shapes support
+    fullgraph: Compile entire graph (no Python fallback)
+    backend: Backend to use ('inductor', 'cudagraphs', 'onnxrt', 'tvm', etc.)
+    options: Additional backend-specific options
+    disable: Disable compilation (useful for debugging)</p>
 </div>
 
 
@@ -19115,30 +18736,25 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Compile a PyTorch model with torch.compile().</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    model: Model to compile
+    config: Compilation configuration
+    example_inputs: Example inputs for warmup
+    warmup: Run warmup iteration</p>
 
-<ul>
-<li><strong>model:</strong>  Model to compile</li>
-<li><strong>config:</strong>  Compilation configuration</li>
-<li><strong>example_inputs:</strong>  Example inputs for warmup</li>
-<li><strong>warmup:</strong>  Run warmup iteration</li>
-</ul>
+<p>Returns:
+    Compiled model</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Compiled model</p>
-</blockquote>
-
-<h6 id="example">Example:</h6>
+<p>Example:</p>
 
 <blockquote>
-  <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">torchagentic</span><span class="w"> </span><span class="kn">import</span> <span class="n">DQN</span><span class="p">,</span> <span class="n">ModelConfig</span><span class="p">,</span> <span class="n">compile_model</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">DQN</span><span class="p">(</span><span class="n">ModelConfig</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">action_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">compiled</span> <span class="o">=</span> <span class="n">compile_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;reduce-overhead&quot;</span><span class="p">)</span>
-</code></pre>
-  </div>
+  <blockquote>
+    <blockquote>
+      <p>from torchagentic import DQN, ModelConfig, compile_model
+      model = DQN(ModelConfig(input_dim=4, action_dim=2))
+      compiled = compile_model(model, mode="reduce-overhead")</p>
+    </blockquote>
+  </blockquote>
 </blockquote>
 </div>
 
@@ -19196,18 +18812,12 @@ all agents' observations and actions during training.</p>
 
             <div class="docstring"><p>Compile a function with torch.compile().</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    fn: Function to compile
+    config: Compilation configuration</p>
 
-<ul>
-<li><strong>fn:</strong>  Function to compile</li>
-<li><strong>config:</strong>  Compilation configuration</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Compiled function</p>
-</blockquote>
+<p>Returns:
+    Compiled function</p>
 </div>
 
 
@@ -19272,20 +18882,14 @@ all agents' observations and actions during training.</p>
 
 <p>Applies aggressive optimizations for maximum inference speed.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    model: Model to optimize
+    device: Target device
+    batch_size: Expected batch size
+    dynamic_shapes: Allow dynamic batch sizes</p>
 
-<ul>
-<li><strong>model:</strong>  Model to optimize</li>
-<li><strong>device:</strong>  Target device</li>
-<li><strong>batch_size:</strong>  Expected batch size</li>
-<li><strong>dynamic_shapes:</strong>  Allow dynamic batch sizes</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Optimized model</p>
-</blockquote>
+<p>Returns:
+    Optimized model</p>
 </div>
 
 
@@ -19344,20 +18948,14 @@ all agents' observations and actions during training.</p>
 
 <p>Balances compilation time with training speed.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    model: Model to optimize
+    device: Target device
+    batch_size: Expected batch size
+    dynamic_shapes: Allow dynamic batch sizes</p>
 
-<ul>
-<li><strong>model:</strong>  Model to optimize</li>
-<li><strong>device:</strong>  Target device</li>
-<li><strong>batch_size:</strong>  Expected batch size</li>
-<li><strong>dynamic_shapes:</strong>  Allow dynamic batch sizes</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Optimized model</p>
-</blockquote>
+<p>Returns:
+    Optimized model</p>
 </div>
 
 
@@ -19416,19 +19014,13 @@ all agents' observations and actions during training.</p>
 
 <p>Uses aggressive autotuning for best performance.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    model: Model to optimize
+    device: Target device
+    batch_size: Expected batch size</p>
 
-<ul>
-<li><strong>model:</strong>  Model to optimize</li>
-<li><strong>device:</strong>  Target device</li>
-<li><strong>batch_size:</strong>  Expected batch size</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Optimized model</p>
-</blockquote>
+<p>Returns:
+    Optimized model</p>
 </div>
 
 
@@ -19483,18 +19075,12 @@ all agents' observations and actions during training.</p>
 
 <p>Reduces memory usage at the cost of some speed.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    model: Model to optimize
+    device: Target device</p>
 
-<ul>
-<li><strong>model:</strong>  Model to optimize</li>
-<li><strong>device:</strong>  Target device</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Optimized model</p>
-</blockquote>
+<p>Returns:
+    Optimized model</p>
 </div>
 
 
