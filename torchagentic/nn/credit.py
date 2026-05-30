@@ -276,7 +276,7 @@ class TDLambdaNet(nn.Module):
         log_probs: Optional[torch.Tensor] = None,
         target_log_probs: Optional[torch.Tensor] = None,
     ) -> Tuple[torch.Tensor, torch.Tensor]:
-        lam = self.lam.item()
+        lam = self.lam
         T, B = rewards.shape
         device = rewards.device
         if dones is None:

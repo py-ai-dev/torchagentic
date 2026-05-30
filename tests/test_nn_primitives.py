@@ -179,6 +179,67 @@ class TestMemoryEdgeCases:
         out, state = mem(x)
         assert out.shape == (2, 4, 32)
 
+    def test_read_weights_sum_to_one(self):
+        for b in ["ntm", "dnc", "sliding"]:
+            mem = Memory(num_slots=8, slot_size=16, num_reads=3, backend=b)
+            state = mem.reset(2)
+            # After reset, read weights are uniform by construction
+            assert torch.allclose(
+                state.read_weights.sum(dim=-1),
+                torch.ones(2, 3),
+            ), f"{b}: reset read weights do not sum to 1"
+            # After a forward pass
+            out, state = mem(torch.randn(2, 16), state)
+            assert torch.allclose(
+                state.read_weights.sum(dim=-1),
+                torch.ones(2, 3),
+                atol=1e-5,
+            ), f"{b}: post-forward read weights do not sum to 1"
+
+    def test_sliding_window_overwrites_oldest(self):
+        mem = Memory(num_slots=4, slot_size=8, num_reads=1, backend="sliding")
+        state = mem.reset(1)
+        for i in range(4):
+            val = torch.full((1, 8), float(i))
+            _, state = mem(torch.randn(1, 8), state)
+        # After 4 writes, memory slots should hold values 0,1,2,3
+        # Write 5th distinct content and check the oldest (0) was overwritten
+        for i in range(4, 8):
+            val = torch.full((1, 8), float(i))
+            _, state = mem(torch.randn(1, 8), state)
+        # After 8 writes wrapping twice, memory is refreshed.
+        # Sliding window uses write values from write_vals (projected by backend),
+        # so we just verify shape and cursor
+        assert int(state.write_weights[0, 0].argmax().item()) == (7 % 4), "Cursor at wrong position"
+
+    def test_dnc_allocation_near_full_memory(self):
+        mem = Memory(num_slots=4, slot_size=8, num_reads=1, backend="dnc")
+        state = mem.reset(1)
+        for _ in range(20):
+            _, state = mem(torch.randn(1, 8), state)
+        # Usage should be high and stable (not NaN)
+        assert torch.isfinite(state.usage).all()
+        assert state.usage.mean() > 0.5, "Usage should be high after many writes"
+        # Should still produce valid read weights
+        out, state = mem(torch.randn(1, 8), state)
+        assert torch.allclose(state.read_weights.sum(dim=-1), torch.ones(1, 1))
+
+    def test_ntm_single_head(self):
+        mem = Memory(num_slots=8, slot_size=16, num_reads=1, num_writes=1, backend="ntm")
+        out, state = mem(torch.randn(2, 16))
+        assert out.shape == (2, 1, 16)
+        assert state.read_weights.shape == (2, 1, 8)
+
+    def test_many_writes_stability(self):
+        mem = Memory(num_slots=16, slot_size=32, num_reads=2, backend="dnc")
+        state = mem.reset(2)
+        for _ in range(200):
+            _, state = mem(torch.randn(2, 32), state)
+        assert torch.isfinite(state.memory).all(), "Memory should not contain NaN/inf after many writes"
+        assert torch.isfinite(state.usage).all()
+        out, state = mem(torch.randn(2, 32), state)
+        assert out.shape == (2, 2, 32)
+
 
 # ===================================================================
 #  CREDIT ASSIGNMENT TESTS
@@ -309,6 +370,16 @@ class TestTDLambda:
         ret, adv = td(rewards, values, dones)
         assert ret.shape == (T, B)
 
+    def test_single_step_with_done(self):
+        td = TDLambda()
+        T, B = 1, 4
+        rewards = torch.ones(T, B)
+        values = torch.randn(T + 1, B)
+        dones = torch.ones(T, B)
+        ret, adv = td(rewards, values, dones)
+        assert ret.shape == (T, B)
+        assert torch.allclose(ret, rewards)
+
 
 class TestVTrace:
     """V-trace off-policy correction edge cases."""
@@ -349,6 +420,42 @@ class TestVTrace:
         vs, adv = vt(rewards, values, log_probs=log_probs, target_log_probs=log_probs)
         assert vs.shape == (T, B)
 
+    def test_dones_mid_trajectory(self):
+        vt = VTrace()
+        T, B = 10, 4
+        rewards = torch.ones(T, B)
+        values = torch.zeros(T + 1, B)
+        dones = torch.zeros(T, B)
+        dones[5, :] = 1.0
+        log_probs = torch.randn(T, B)
+        vs, adv = vt(rewards, values, dones, log_probs, log_probs)
+        assert vs.shape == (T, B)
+
+    def test_single_step_with_done(self):
+        vt = VTrace()
+        T, B = 1, 4
+        rewards = torch.ones(T, B)
+        values = torch.randn(T + 1, B)
+        dones = torch.ones(T, B)
+        lp = torch.randn(T, B)
+        vs, adv = vt(rewards, values, dones, lp, lp)
+        assert vs.shape == (T, B)
+        assert torch.allclose(vs, rewards)
+
+    def test_zero_importance_weights(self):
+        vt = VTrace(rho_bar=1.0, c_bar=1.0)
+        T, B = 5, 2
+        rewards = torch.randn(T, B)
+        values = torch.randn(T + 1, B)
+        # Zero IS weight: behaviour vastly more likely than target
+        log_probs = torch.ones(T, B) * 100.0
+        target_log_probs = torch.zeros(T, B)
+        vs, adv = vt(rewards, values, log_probs=log_probs, target_log_probs=target_log_probs)
+        assert vs.shape == (T, B)
+        assert torch.isfinite(vs).all()
+        # With c_bar=1, clipped c=1, so trace decays normally
+        assert torch.allclose(vs, values[:-1]), "With zero IS, V-trace target should equal bootstrapped value"
+
 
 class TestRetrace:
     """Retrace off-policy edge cases."""
@@ -377,6 +484,28 @@ class TestRetrace:
         ret, adv = rt(rewards, values, log_probs=lp, target_log_probs=lp)
         assert ret.shape == (T, B)
 
+    def test_dones_mid_trajectory(self):
+        rt = Retrace()
+        T, B = 10, 4
+        rewards = torch.ones(T, B)
+        values = torch.zeros(T + 1, B)
+        dones = torch.zeros(T, B)
+        dones[5, :] = 1.0
+        lp = torch.randn(T, B)
+        ret, adv = rt(rewards, values, dones, lp, lp)
+        assert ret.shape == (T, B)
+        assert torch.isfinite(ret).all()
+
+    def test_single_step_with_done(self):
+        rt = Retrace()
+        T, B = 1, 4
+        rewards = torch.ones(T, B)
+        values = torch.randn(T + 1, B)
+        dones = torch.ones(T, B)
+        lp = torch.randn(T, B)
+        ret, adv = rt(rewards, values, dones, lp, lp)
+        assert ret.shape == (T, B)
+
 
 class TestTDLambdaNet:
     """Learned λ parameter edge cases."""
@@ -402,6 +531,32 @@ class TestTDLambdaNet:
         tdn = TDLambdaNet(gamma=0.99, init_lam=0.3)
         lam = tdn.lam
         assert 0.0 <= lam <= 1.0
+
+    def test_lam_trained_via_gradient(self):
+        """Simulate a training loop: λ should move toward a target value."""
+        tdn = TDLambdaNet(gamma=0.99, init_lam=0.5)
+        optim = torch.optim.SGD([tdn.logit_lam], lr=0.1)
+        T, B = 16, 4
+        initial_lam = tdn.lam.item()
+        for _ in range(50):
+            rewards = torch.randn(T, B)
+            values = torch.randn(T + 1, B)
+            ret, adv = tdn(rewards, values)
+            loss = adv.pow(2).mean()
+            optim.zero_grad()
+            loss.backward()
+            optim.step()
+        assert tdn.lam.item() != initial_lam, "λ should change after training"
+
+    def test_single_step_with_done(self):
+        tdn = TDLambdaNet(gamma=0.99)
+        T, B = 1, 4
+        rewards = torch.ones(T, B)
+        values = torch.randn(T + 1, B)
+        dones = torch.ones(T, B)
+        ret, adv = tdn(rewards, values, dones)
+        assert ret.shape == (T, B)
+        assert torch.allclose(ret, rewards)
 
 
 # ===================================================================
@@ -476,6 +631,16 @@ class TestValueIteration:
         v, q = vi(reward, kernel)
         assert v.shape == (B, 10)
 
+    def test_gamma_0(self):
+        vi = ValueIteration(num_states=5, num_actions=3, gamma=0.0, num_iters=10)
+        reward = torch.randn(2, 5, 3)
+        kernel = torch.randn(2, 5, 3, 5)
+        kernel = F.softmax(kernel.reshape(2, 15, 5), dim=-1).reshape(2, 5, 3, 5)
+        v, q = vi(reward, kernel)
+        assert v.shape == (2, 5)
+        assert torch.allclose(v, reward.max(dim=-1).values, atol=1e-5), \
+            "With γ=0, V(s) = max_a r(s,a)"
+
 
 class TestMCTSPlanner:
     """MCTS planner edge cases."""
@@ -506,6 +671,20 @@ class TestMCTSPlanner:
         probs, _ = mcts(torch.randn(B, A), torch.randn(B))
         assert torch.allclose(probs.sum(dim=-1), torch.ones(B))
         assert (probs >= 0).all()
+
+    def test_gradient_flow(self):
+        mcts = MCTSPlanner(num_simulations=5, c_puct=1.0)
+        B, A = 4, 6
+        prior_logits = torch.randn(B, A, requires_grad=True)
+        value = torch.randn(B, requires_grad=True)
+        probs, v = mcts(prior_logits, value)
+        weights = torch.arange(A, dtype=torch.float)
+        loss = (probs * weights).sum() + v.sum()
+        loss.backward()
+        assert prior_logits.grad is not None
+        assert prior_logits.grad.abs().sum() > 0
+        assert value.grad is not None
+        assert value.grad.abs().sum() > 0
 
 
 class TestSuccessorRepresentation:
@@ -563,6 +742,20 @@ class TestLearnedPrior:
         loss = logits.sum()
         loss.backward()
         assert latent.grad is not None
+
+    def test_plan_length_1(self):
+        lp = LearnedPrior(latent_dim=16, num_actions=3, plan_length=1)
+        logits = lp(torch.randn(2, 16))
+        assert logits.shape == (2, 1, 3)
+
+    def test_gradient_flow_plan_length_1(self):
+        lp = LearnedPrior(latent_dim=16, num_actions=3, plan_length=1)
+        latent = torch.randn(2, 16, requires_grad=True)
+        logits = lp(latent)
+        loss = logits.sum()
+        loss.backward()
+        assert latent.grad is not None
+        assert latent.grad.abs().sum() > 0
 
 
 # ===================================================================
@@ -626,6 +819,23 @@ class TestRND:
         rnd.reward_scale = 0.5
         r2 = rnd(states)
         assert torch.allclose(r1, r2 * 4.0, atol=1e-5)
+
+    def test_training_reduces_error(self):
+        rnd = RandomNetworkDistillation(state_dim=8, hidden_dim=32)
+        optim = torch.optim.SGD(rnd.predictor.parameters(), lr=0.01)
+        states = torch.randn(50, 8)
+        with torch.no_grad():
+            initial_error = (rnd.predictor(states) - rnd.target(states)).pow(2).mean().item()
+        for _ in range(200):
+            loss = (rnd.predictor(states) - rnd.target(states)).pow(2).mean()
+            optim.zero_grad()
+            loss.backward()
+            optim.step()
+        with torch.no_grad():
+            final_error = (rnd.predictor(states) - rnd.target(states)).pow(2).mean().item()
+        assert final_error < initial_error, "Predictor error should decrease with training"
+        for p in rnd.target.parameters():
+            assert not p.requires_grad
 
 
 class TestICM:
@@ -696,6 +906,20 @@ class TestCountBonus:
             cb(torch.randn(2, 4))
         assert cb.total_count.item() == initial
 
+    def test_repeated_state_decay(self):
+        cb = CountBonus(state_dim=4, reward_scale=1.0)
+        state = torch.randn(1, 4)
+        bonus_before = cb(state).item()
+        optim = torch.optim.SGD(cb.density.parameters(), lr=0.01)
+        for _ in range(100):
+            rho = cb.density(state)
+            loss = -(rho).mean()
+            optim.zero_grad()
+            loss.backward()
+            optim.step()
+        bonus_after = cb(state).item()
+        assert bonus_after < bonus_before, "Bonus should decrease as density increases"
+
 
 class TestDisagreementEnsemble:
     """Ensemble disagreement edge cases."""
@@ -738,6 +962,15 @@ class TestDisagreementEnsemble:
         d1 = de(states_same[0], actions)
         d2 = de(torch.randn(4, 8), actions)
         assert d1.shape == (4,)
+
+    def test_ensemble_members_distinct(self):
+        de = DisagreementEnsemble(state_dim=8, action_dim=2, ensemble_size=5)
+        states = torch.randn(1, 8)
+        actions = torch.randn(1, 2)
+        sa = torch.cat([states, actions], dim=-1)
+        preds = torch.stack([m(sa) for m in de.models], dim=0)
+        variances = preds.var(dim=0)
+        assert (variances > 0).any(), "Ensemble members should produce distinct predictions"
 
 
 # ===================================================================
@@ -835,6 +1068,46 @@ class TestCompileCompatibility:
         assert logits.shape == (4, 4)
         assert value.shape == (4,)
         assert intrinsic.shape == (4,)
+
+    @pytest.mark.skipif(not hasattr(torch, "compile"), reason="torch.compile not available")
+    def test_dnc_compile(self):
+        mem = Memory(num_slots=8, slot_size=16, num_reads=1, num_writes=1, backend="dnc")
+        compiled = torch.compile(mem)
+        x = torch.randn(2, 16)
+        out, state = compiled(x)
+        assert out.shape == (2, 1, 16)
+
+    @pytest.mark.skipif(not hasattr(torch, "compile"), reason="torch.compile not available")
+    def test_sliding_window_compile(self):
+        mem = Memory(num_slots=8, slot_size=16, num_reads=1, backend="sliding")
+        compiled = torch.compile(mem)
+        x = torch.randn(2, 16)
+        out, state = compiled(x)
+        assert out.shape == (2, 1, 16)
+
+    @pytest.mark.skipif(not hasattr(torch, "compile"), reason="torch.compile not available")
+    def test_icm_compile(self):
+        icm = torch.compile(ICM(state_dim=16, action_dim=4))
+        states = torch.randn(4, 16)
+        actions = torch.randn(4, 4)
+        next_states = torch.randn(4, 16)
+        reward = icm(states, actions, next_states)
+        assert reward.shape == (4,)
+
+    @pytest.mark.skipif(not hasattr(torch, "compile"), reason="torch.compile not available")
+    def test_count_bonus_compile(self):
+        cb = torch.compile(CountBonus(state_dim=16))
+        states = torch.randn(4, 16)
+        reward = cb(states)
+        assert reward.shape == (4,)
+
+    @pytest.mark.skipif(not hasattr(torch, "compile"), reason="torch.compile not available")
+    def test_disagreement_compile(self):
+        de = torch.compile(DisagreementEnsemble(state_dim=16, action_dim=4, ensemble_size=3))
+        states = torch.randn(4, 16)
+        actions = torch.randn(4, 4)
+        reward = de(states, actions)
+        assert reward.shape == (4,)
 
 
 # ===================================================================

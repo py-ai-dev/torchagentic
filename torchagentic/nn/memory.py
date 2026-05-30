@@ -335,9 +335,10 @@ class DNCBank(MemoryBackend):
         raw_write_w = 0.5 * content_w.squeeze(1) + 0.5 * alloc_w
         write_weights = write_gates.unsqueeze(-1) * raw_write_w.unsqueeze(1)
 
-        # --- Update usage. (keep 1D) ---
-        new_usage = state.usage * 0.99 + write_weights.mean(dim=(0, 1)) * 0.01
-        new_usage = new_usage * (1 - free_gates.mean(dim=(0, 1)).squeeze())
+        # --- Update usage: u ← u + w_w - u * w_w  (per DNC paper). ---
+        ww = write_weights.mean(dim=(0, 1))
+        new_usage = state.usage + ww - state.usage * ww
+        new_usage = new_usage * (1 - 0.05 * free_gates.mean(dim=(0, 1)).squeeze())
 
         # --- Update link matrix. ---
         write_flat = write_weights.mean(dim=1)
@@ -354,7 +355,9 @@ class DNCBank(MemoryBackend):
             cw = self._content_weights(key, strength, state.memory)
 
             bw = state.read_weights[:, h:h+1, :] @ state.link_matrix
+            bw = bw / (bw.sum(dim=-1, keepdim=True) + 1e-8)
             fw = state.read_weights[:, h:h+1, :] @ state.link_matrix.T
+            fw = fw / (fw.sum(dim=-1, keepdim=True) + 1e-8)
 
             blend = (
                 read_modes[:, h, 0:1].unsqueeze(-1) * cw
@@ -364,6 +367,7 @@ class DNCBank(MemoryBackend):
             read_weights_list.append(blend)
 
         read_weights = torch.cat(read_weights_list, dim=1)
+        read_weights = read_weights / (read_weights.sum(dim=-1, keepdim=True) + 1e-8)
 
         # Flatten write params.
         write_params = torch.cat([
