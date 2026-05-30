@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="flame" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="50%" stop-color="#a29bfe"/>
+      <stop offset="100%" stop-color="#fd79a8"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0f1a"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="48" fill="url(#bg)"/>
+  <!-- Torch flame -->
+  <path d="M128 32c0 0-48 64-48 104c0 26.5 21.5 48 48 48s48-21.5 48-48c0-40-48-104-48-104z" fill="url(#flame)" opacity="0.9"/>
+  <!-- Inner flame -->
+  <path d="M128 56c0 0-28 48-28 76c0 15.5 12.5 28 28 28s28-12.5 28-28c0-28-28-76-28-76z" fill="#fff" opacity="0.3"/>
+  <!-- Circuit nodes -->
+  <circle cx="88" cy="168" r="6" fill="#a29bfe" opacity="0.8"/>
+  <circle cx="168" cy="168" r="6" fill="#a29bfe" opacity="0.8"/>
+  <circle cx="128" cy="196" r="6" fill="#a29bfe" opacity="0.8"/>
+  <!-- Circuit lines -->
+  <line x1="88" y1="168" x2="128" y2="196" stroke="#a29bfe" stroke-width="2" opacity="0.6"/>
+  <line x1="168" y1="168" x2="128" y2="196" stroke="#a29bfe" stroke-width="2" opacity="0.6"/>
+  <line x1="88" y1="168" x2="168" y2="168" stroke="#a29bfe" stroke-width="2" opacity="0.6"/>
+  <!-- Rings -->
+  <circle cx="128" cy="148" r="52" fill="none" stroke="#a29bfe" stroke-width="1.5" opacity="0.2"/>
+  <circle cx="128" cy="148" r="64" fill="none" stroke="#a29bfe" stroke-width="1" opacity="0.12"/>
+</svg>

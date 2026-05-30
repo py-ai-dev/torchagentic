@@ -258,6 +258,36 @@ nav.pdoc {
   background-color: rgb(55, 58, 72);
 }
 
+nav.pdoc h2 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--silver);
+  font-weight: 600;
+  margin: 1rem 0 0.4rem;
+  padding: 0;
+}
+
+nav.pdoc h2:first-of-type {
+  margin-top: 0.5rem;
+}
+
+nav.pdoc ul {
+  margin-bottom: 0.5rem;
+}
+
+nav.pdoc ul.memberlist {
+  margin-bottom: 0;
+}
+
+.pdoc .logo {
+  max-width: 80%;
+  max-height: 80px;
+  display: block;
+  margin: 0.5rem auto 0.5rem;
+  border-radius: 12px;
+}
+
 .pdoc-code .k {
   color: var(--red);
 }
