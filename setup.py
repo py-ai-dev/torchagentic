@@ -19,7 +19,7 @@ setup(
     version="0.2.0",
     author="Py-AI-Dev",
     author_email="contact@liodon.ai",
-    description="Differentiable cognitive primitives for agentic AI - Memory, Credit Assignment, Planning, Exploration",
+    description="Differentiable cognitive primitives for agentic AI - Memory, Planning, Exploration",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/liodon-ai/torchagentic",
